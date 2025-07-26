@@ -1,9 +1,11 @@
 """Quality Trio Workflow - Sequential execution of polish, review, and test agents."""
 
-from typing import Dict, Any, List, Optional
 from pathlib import Path
+from typing import Any, Dict, List, Optional
+
 from crewai import Crew, Process
-from src.agents import PolishSpecialist, CodeReviewer, TestEngineer
+
+from src.agents import CodeReviewer, PolishSpecialist, TestEngineer
 from src.config import CREW_CONFIG
 
 
@@ -65,7 +67,7 @@ class QualityTrioWorkflow:
                 "status": "completed",
                 "result": str(polish_result),
             }
-            print(f"✅ Polish stage completed")
+            print("✅ Polish stage completed")
             
             # Stage 2: Review the polished code
             print("\n🔍 Stage 2: Code Reviewer")
@@ -89,7 +91,7 @@ class QualityTrioWorkflow:
                 "status": "completed",
                 "result": str(review_result),
             }
-            print(f"✅ Review stage completed")
+            print("✅ Review stage completed")
             
             # Stage 3: Generate tests
             print("\n🧪 Stage 3: Test Engineer")
@@ -110,7 +112,7 @@ class QualityTrioWorkflow:
                 "status": "completed",
                 "result": str(test_result),
             }
-            print(f"✅ Test generation stage completed")
+            print("✅ Test generation stage completed")
             
             # Summary
             print("\n🎉 Quality Trio Workflow Completed Successfully!")
@@ -146,7 +148,9 @@ class QualityTrioWorkflow:
         dir_path = Path(directory_path)
         if not dir_path.exists() or not dir_path.is_dir():
             return {
-                "error": f"Directory {directory_path} does not exist or is not a directory"
+                "error": (
+                    f"Directory {directory_path} does not exist or is not a directory"
+                )
             }
         
         # Default exclusions
@@ -178,7 +182,10 @@ class QualityTrioWorkflow:
         
         for file_path in filtered_files:
             print(f"\n{'='*60}")
-            print(f"Processing file {filtered_files.index(file_path) + 1}/{len(filtered_files)}")
+            print(
+                f"Processing file {filtered_files.index(file_path) + 1}/"
+                f"{len(filtered_files)}"
+            )
             file_results = self.process_file(str(file_path))
             results["files_processed"].append(file_results)
         
@@ -219,6 +226,9 @@ Batch Processing Summary:
             summary += "\n\nFailed Files:"
             for file_result in results["files_processed"]:
                 if file_result.get("status") != "success":
-                    summary += f"\n  - {file_result['file_path']}: {file_result.get('error', 'Unknown error')}"
+                    summary += (
+                        f"\n  - {file_result['file_path']}: "
+                        f"{file_result.get('error', 'Unknown error')}"
+                    )
         
         return summary.strip()

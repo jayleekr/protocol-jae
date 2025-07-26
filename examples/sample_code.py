@@ -50,7 +50,7 @@ class DataProcessor:
     # SQL injection vulnerability
     def find_by_name(self, name):
         # Simulated SQL query (vulnerable)
-        query = f"SELECT * FROM items WHERE name = '{name}'"
+        # query = f"SELECT * FROM items WHERE name = '{name}'"
         # In real code, this would execute the query
         results = []
         for item in self.data:

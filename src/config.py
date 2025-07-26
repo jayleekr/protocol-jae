@@ -2,6 +2,7 @@
 
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -45,7 +46,8 @@ AGENT_CONFIG = {
     "test_engineer": {
         "role": "테스트 자동화 전문가",
         "goal": "포괄적인 테스트 케이스를 생성하여 코드의 신뢰성과 안정성 보장",
-        "backstory": """당신은 TDD/BDD 방법론의 선구자이며, 테스트 자동화 분야의 전문가입니다.
+        "backstory": """당신은 TDD/BDD 방법론의 선구자이며, 
+        테스트 자동화 분야의 전문가입니다.
         단위 테스트, 통합 테스트, E2E 테스트의 균형을 완벽하게 이해하고 있으며,
         테스트 커버리지 90% 이상을 달성하는 것을 목표로 합니다.
         테스트 피라미드 원칙을 따르며, 빠르고 신뢰할 수 있는 테스트를 작성합니다.""",

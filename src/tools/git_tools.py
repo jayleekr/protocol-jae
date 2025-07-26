@@ -2,7 +2,8 @@
 
 import subprocess
 from pathlib import Path
-from typing import List, Optional, Dict, Any
+from typing import Any, Dict, List, Optional
+
 from crewai_tools import BaseTool
 
 
@@ -101,7 +102,9 @@ class GitStatusTool(BaseTool):
     """Tool for checking git status."""
 
     name: str = "Git Status Tool"
-    description: str = "Check the current git status to see modified, staged, and untracked files."
+    description: str = (
+        "Check the current git status to see modified, staged, and untracked files."
+    )
 
     def _run(self, **kwargs: Any) -> str:
         """
@@ -150,7 +153,11 @@ class GitStatusTool(BaseTool):
                     for file in files:
                         output.append(f"  - {file}")
 
-            return "Git Status:" + "".join(output) if output else "Working directory clean"
+            return (
+                "Git Status:" + "".join(output) 
+                if output 
+                else "Working directory clean"
+            )
 
         except subprocess.CalledProcessError as e:
             return f"Error running git status: {e.stderr}"

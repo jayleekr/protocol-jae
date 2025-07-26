@@ -1,11 +1,13 @@
 """Code Reviewer Agent - Automated code review expert."""
 
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, Optional
+
 from crewai import Agent, Task
 from langchain_openai import ChatOpenAI
+
 from src.config import AGENT_CONFIG, LLM_CONFIG
-from src.tools.git_tools import git_file_tool, git_diff_tool, git_status_tool
-from src.tools.analysis_tools import ruff_tool, pylint_tool
+from src.tools.analysis_tools import pylint_tool, ruff_tool
+from src.tools.git_tools import git_diff_tool, git_file_tool, git_status_tool
 
 
 class CodeReviewer:

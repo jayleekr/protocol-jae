@@ -1,8 +1,10 @@
 """Test Engineer Agent - Automated test generation expert."""
 
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict
+
 from crewai import Agent, Task
 from langchain_openai import ChatOpenAI
+
 from src.config import AGENT_CONFIG, LLM_CONFIG
 from src.tools.git_tools import git_file_tool
 
@@ -160,7 +162,9 @@ class TestEngineer:
             "agent": "test_engineer",
         }
 
-    def improve_test_coverage(self, test_file_path: str, source_file_path: str) -> Dict[str, Any]:
+    def improve_test_coverage(
+        self, test_file_path: str, source_file_path: str
+    ) -> Dict[str, Any]:
         """
         Improve existing test coverage by adding missing tests.
 

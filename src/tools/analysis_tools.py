@@ -1,9 +1,9 @@
 """Static analysis tools for code quality checking."""
 
-import subprocess
 import json
-from pathlib import Path
-from typing import Dict, List, Any, Optional
+import subprocess
+from typing import Any, Dict, List
+
 from crewai_tools import BaseTool
 
 
@@ -68,7 +68,10 @@ class RuffTool(BaseTool):
                 return f"Ruff output:\n{result.stdout}"
 
         except FileNotFoundError:
-            return "Error: Ruff is not installed. Please install it with 'pip install ruff'"
+            return (
+                "Error: Ruff is not installed. "
+                "Please install it with 'pip install ruff'"
+            )
         except Exception as e:
             return f"Error running Ruff: {str(e)}"
 
@@ -135,7 +138,9 @@ class PylintTool(BaseTool):
 
                     for issue_type, type_issues in issue_types.items():
                         if type_issues:
-                            output.append(f"\n{issue_type.upper()}S ({len(type_issues)}):")
+                            output.append(
+                                f"\n{issue_type.upper()}S ({len(type_issues)}):"
+                            )
                             for issue in type_issues:
                                 output.append(
                                     f"  - Line {issue['line']}: "
@@ -169,7 +174,10 @@ class PylintTool(BaseTool):
                 return f"Pylint output:\n{result.stderr}"
 
         except FileNotFoundError:
-            return "Error: Pylint is not installed. Please install it with 'pip install pylint'"
+            return (
+                "Error: Pylint is not installed. "
+                "Please install it with 'pip install pylint'"
+            )
         except Exception as e:
             return f"Error running Pylint: {str(e)}"
 
@@ -253,7 +261,10 @@ class CodeComplexityTool(BaseTool):
                 return f"Complexity analysis output:\n{result.stdout}"
 
         except FileNotFoundError:
-            return "Error: Radon is not installed. Please install it with 'pip install radon'"
+            return (
+                "Error: Radon is not installed. "
+                "Please install it with 'pip install radon'"
+            )
         except Exception as e:
             return f"Error analyzing complexity: {str(e)}"
 

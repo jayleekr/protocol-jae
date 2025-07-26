@@ -4,8 +4,9 @@
 import argparse
 import sys
 from pathlib import Path
-from src.workflows import QualityTrioWorkflow
+
 from src.config import PROJECT_ROOT
+from src.workflows import QualityTrioWorkflow
 
 
 def main():
