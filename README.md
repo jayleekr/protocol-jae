@@ -39,7 +39,50 @@ pip install -r requirements.txt
 
 ## 사용법
 
-(추후 업데이트 예정)
+### 환경 설정
+
+1. 환경변수 설정:
+```bash
+cp .env.example .env
+# .env 파일을 편집하여 API 키 설정
+```
+
+2. 가상환경 생성 및 의존성 설치:
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 실행 방법
+
+#### 데모 실행
+```bash
+python main.py --demo
+```
+
+#### 단일 파일 처리
+```bash
+python main.py --file path/to/your/file.py
+```
+
+#### 디렉토리 처리
+```bash
+python main.py --directory src/
+```
+
+### 워크플로우 단계
+
+1. **Polish Specialist**: 코드 품질 개선 및 리팩토링
+2. **Code Reviewer**: 자동화된 코드 리뷰 및 보안 검사
+3. **Test Engineer**: 포괄적인 테스트 생성
+
+### 예상 결과
+
+- 개선된 코드 품질
+- 자동 생성된 테스트
+- 상세한 코드 리뷰 리포트
+- DORA 메트릭 개선
 
 ## 라이선스
 

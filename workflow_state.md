@@ -63,6 +63,8 @@ User request → restore/show blueprint.
 - 2025-07-26: 프로젝트 Jae 시작, git 저장소 초기화
 - 2025-07-26: project_config.md 업데이트 - 목표 및 기술 스택 정의
 - 2025-07-26: ANALYZE 단계로 전환, MVP 구현 계획 수립
+- 2025-07-26: GitHub Actions CI/CD 파이프라인 구성 및 검증 완료
+- 2025-07-26: 프로젝트 구조 설정 완료 (src/, tests/, docs/)
 
 ## Workflow History
 <!-- commit SHA & msg -->
