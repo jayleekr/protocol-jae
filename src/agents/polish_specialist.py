@@ -16,14 +16,14 @@ class PolishSpecialist:
     def __init__(self):
         """Initialize the Polish Specialist agent."""
         self.config = AGENT_CONFIG["polish_specialist"]
-        
+
         # Initialize LLM
         self.llm = ChatOpenAI(
             model_name=LLM_CONFIG["openai"]["model"],
             openai_api_key=LLM_CONFIG["openai"]["api_key"],
             temperature=0.1,  # Low temperature for consistent refactoring
         )
-        
+
         # Initialize tools
         self.tools = [
             git_file_tool,
@@ -32,7 +32,7 @@ class PolishSpecialist:
             pylint_tool,
             complexity_tool,
         ]
-        
+
         # Create the agent
         self.agent = Agent(
             role=self.config["role"],
@@ -88,7 +88,7 @@ class PolishSpecialist:
         - 수행한 개선사항 목록과 각각의 이유
         - 코드 품질 점수의 변화 (있는 경우)
         """
-        
+
         return Task(
             description=task_description,
             agent=self.agent,
@@ -111,7 +111,7 @@ class PolishSpecialist:
         """
         task = self.create_polish_task(file_path)
         result = task.execute()
-        
+
         return {
             "file_path": file_path,
             "improvements": result,

@@ -24,45 +24,35 @@ Examples:
   
   # Run demo with sample code
   python main.py --demo
-        """
+        """,
     )
-    
+
+    parser.add_argument("--file", "-f", type=str, help="Process a single Python file")
+
     parser.add_argument(
-        "--file", "-f",
-        type=str,
-        help="Process a single Python file"
+        "--directory", "-d", type=str, help="Process all Python files in a directory"
     )
-    
-    parser.add_argument(
-        "--directory", "-d",
-        type=str,
-        help="Process all Python files in a directory"
-    )
-    
-    parser.add_argument(
-        "--demo",
-        action="store_true",
-        help="Run demo with sample code"
-    )
-    
+
+    parser.add_argument("--demo", action="store_true", help="Run demo with sample code")
+
     parser.add_argument(
         "--pattern",
         type=str,
         default="*.py",
-        help="File pattern to match (default: *.py)"
+        help="File pattern to match (default: *.py)",
     )
-    
+
     args = parser.parse_args()
-    
+
     # Validate arguments
     if not any([args.file, args.directory, args.demo]):
         parser.print_help()
         sys.exit(1)
-    
+
     # Initialize workflow
     print("\n🚀 Initializing Jae Quality Trio Workflow...")
     workflow = QualityTrioWorkflow()
-    
+
     try:
         if args.demo:
             # Run demo
@@ -70,33 +60,33 @@ Examples:
             if not demo_file.exists():
                 print(f"❌ Demo file not found: {demo_file}")
                 sys.exit(1)
-            
+
             print(f"\n📋 Running demo with: {demo_file}")
             results = workflow.process_file(str(demo_file))
-            
+
         elif args.file:
             # Process single file
             file_path = Path(args.file)
             if not file_path.exists():
                 print(f"❌ File not found: {args.file}")
                 sys.exit(1)
-            
+
             results = workflow.process_file(args.file)
-            
+
         elif args.directory:
             # Process directory
             results = workflow.process_directory(args.directory, args.pattern)
-        
+
         # Print final summary
-        print("\n" + "="*60)
+        print("\n" + "=" * 60)
         print("📊 FINAL SUMMARY")
-        print("="*60)
-        
+        print("=" * 60)
+
         if "summary" in results:
             print(results["summary"])
         else:
             print("✅ Workflow completed successfully!")
-            
+
     except KeyboardInterrupt:
         print("\n\n⚠️  Workflow interrupted by user")
         sys.exit(1)

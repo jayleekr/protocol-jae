@@ -37,9 +37,7 @@ class RuffTool(BaseTool):
             if fix:
                 cmd.append("--fix")
 
-            result = subprocess.run(
-                cmd, capture_output=True, text=True
-            )
+            result = subprocess.run(cmd, capture_output=True, text=True)
 
             if result.returncode == 0:
                 return f"✅ No issues found in {file_path}"
@@ -52,13 +50,13 @@ class RuffTool(BaseTool):
 
                 # Format issues
                 output = [f"🔍 Ruff found {len(issues)} issue(s) in {file_path}:\n"]
-                
+
                 for issue in issues:
                     output.append(
                         f"  - Line {issue['location']['row']}: "
                         f"{issue['code']} - {issue['message']}"
                     )
-                    if issue.get('fix'):
+                    if issue.get("fix"):
                         output.append(f"    Fix available: {issue['fix']['message']}")
 
                 return "\n".join(output)
@@ -108,15 +106,13 @@ class PylintTool(BaseTool):
                 "--reports=n",
             ]
 
-            result = subprocess.run(
-                cmd, capture_output=True, text=True
-            )
+            result = subprocess.run(cmd, capture_output=True, text=True)
 
             # Parse JSON output
             try:
                 if result.stdout:
                     issues = json.loads(result.stdout)
-                    
+
                     if not issues:
                         return f"✅ Pylint found no issues in {file_path}"
 
@@ -157,9 +153,9 @@ class PylintTool(BaseTool):
                     score_result = subprocess.run(
                         score_cmd, capture_output=True, text=True
                     )
-                    
+
                     # Extract score from output
-                    for line in score_result.stdout.split('\n'):
+                    for line in score_result.stdout.split("\n"):
                         if "Your code has been rated at" in line:
                             output.append(f"\n{line}")
                             break
@@ -209,9 +205,7 @@ class CodeComplexityTool(BaseTool):
             # Use radon for complexity analysis
             cmd = ["radon", "cc", file_path, "-s", "--json"]
 
-            result = subprocess.run(
-                cmd, capture_output=True, text=True
-            )
+            result = subprocess.run(cmd, capture_output=True, text=True)
 
             if result.returncode != 0:
                 return f"Error analyzing complexity: {result.stderr}"
@@ -219,17 +213,17 @@ class CodeComplexityTool(BaseTool):
             # Parse JSON output
             try:
                 data = json.loads(result.stdout)
-                
+
                 if not data or not data.get(file_path):
                     return f"✅ No complexity issues found in {file_path}"
 
                 output = [f"🔍 Complexity analysis for {file_path}:\n"]
-                
+
                 for item in data[file_path]:
-                    complexity = item['complexity']
-                    name = item['name']
-                    line = item['lineno']
-                    
+                    complexity = item["complexity"]
+                    name = item["name"]
+                    line = item["lineno"]
+
                     # Determine complexity level
                     if complexity <= 5:
                         level = "Simple"
@@ -240,7 +234,7 @@ class CodeComplexityTool(BaseTool):
                     else:
                         level = "Complex"
                         emoji = "🚨"
-                    
+
                     output.append(
                         f"  {emoji} {name} (line {line}): "
                         f"Complexity = {complexity} ({level})"
@@ -248,10 +242,8 @@ class CodeComplexityTool(BaseTool):
 
                 # Add maintainability index
                 mi_cmd = ["radon", "mi", file_path, "-s"]
-                mi_result = subprocess.run(
-                    mi_cmd, capture_output=True, text=True
-                )
-                
+                mi_result = subprocess.run(mi_cmd, capture_output=True, text=True)
+
                 if mi_result.returncode == 0:
                     output.append(f"\n{mi_result.stdout.strip()}")
 

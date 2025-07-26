@@ -15,19 +15,19 @@ class TestEngineer:
     def __init__(self):
         """Initialize the Test Engineer agent."""
         self.config = AGENT_CONFIG["test_engineer"]
-        
+
         # Initialize LLM
         self.llm = ChatOpenAI(
             model_name=LLM_CONFIG["openai"]["model"],
             openai_api_key=LLM_CONFIG["openai"]["api_key"],
             temperature=0.2,  # Low temperature for consistent test generation
         )
-        
+
         # Initialize tools
         self.tools = [
             git_file_tool,
         ]
-        
+
         # Create the agent
         self.agent = Agent(
             role=self.config["role"],
@@ -40,9 +40,7 @@ class TestEngineer:
         )
 
     def create_test_generation_task(
-        self, 
-        file_path: str,
-        test_framework: str = "pytest"
+        self, file_path: str, test_framework: str = "pytest"
     ) -> Task:
         """
         Create a task for generating tests.
@@ -125,7 +123,7 @@ class TestEngineer:
         
         테스트 파일은 tests/ 디렉토리에 test_<원본파일명>.py 형식으로 저장하세요.
         """
-        
+
         return Task(
             description=task_description,
             agent=self.agent,
@@ -138,9 +136,7 @@ class TestEngineer:
         )
 
     def generate_tests(
-        self, 
-        file_path: str,
-        test_framework: str = "pytest"
+        self, file_path: str, test_framework: str = "pytest"
     ) -> Dict[str, Any]:
         """
         Generate tests for the given file.
@@ -154,7 +150,7 @@ class TestEngineer:
         """
         task = self.create_test_generation_task(file_path, test_framework)
         result = task.execute()
-        
+
         return {
             "source_file": file_path,
             "test_results": result,
@@ -193,9 +189,9 @@ class TestEngineer:
             agent=self.agent,
             expected_output="추가 테스트 케이스와 커버리지 개선 계획",
         )
-        
+
         result = task.execute()
-        
+
         return {
             "test_file": test_file_path,
             "source_file": source_file_path,

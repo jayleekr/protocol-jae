@@ -16,14 +16,14 @@ class CodeReviewer:
     def __init__(self):
         """Initialize the Code Reviewer agent."""
         self.config = AGENT_CONFIG["code_reviewer"]
-        
+
         # Initialize LLM
         self.llm = ChatOpenAI(
             model_name=LLM_CONFIG["openai"]["model"],
             openai_api_key=LLM_CONFIG["openai"]["api_key"],
             temperature=0.3,  # Slightly higher for more comprehensive reviews
         )
-        
+
         # Initialize tools
         self.tools = [
             git_file_tool,
@@ -32,7 +32,7 @@ class CodeReviewer:
             ruff_tool,
             pylint_tool,
         ]
-        
+
         # Create the agent
         self.agent = Agent(
             role=self.config["role"],
@@ -44,11 +44,7 @@ class CodeReviewer:
             allow_delegation=False,
         )
 
-    def create_review_task(
-        self, 
-        file_path: str, 
-        context: Optional[str] = None
-    ) -> Task:
+    def create_review_task(self, file_path: str, context: Optional[str] = None) -> Task:
         """
         Create a task for reviewing code.
 
@@ -126,7 +122,7 @@ class CodeReviewer:
         - 전체 점수: X/10
         - 세부 점수: 보안(X/10), 성능(X/10), 가독성(X/10), 설계(X/10)
         """
-        
+
         return Task(
             description=task_description,
             agent=self.agent,
@@ -139,9 +135,7 @@ class CodeReviewer:
         )
 
     def review_code(
-        self, 
-        file_path: str,
-        context: Optional[str] = None
+        self, file_path: str, context: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Review code in the given file.
@@ -155,7 +149,7 @@ class CodeReviewer:
         """
         task = self.create_review_task(file_path, context)
         result = task.execute()
-        
+
         return {
             "file_path": file_path,
             "review": result,
@@ -175,9 +169,9 @@ class CodeReviewer:
             agent=self.agent,
             expected_output="변경된 파일 목록",
         )
-        
+
         status_result = status_task.execute()
-        
+
         # Then create a comprehensive review task
         review_task = Task(
             description=f"""
@@ -193,9 +187,9 @@ class CodeReviewer:
             agent=self.agent,
             expected_output="모든 변경사항에 대한 종합적인 리뷰 보고서",
         )
-        
+
         result = review_task.execute()
-        
+
         return {
             "review": result,
             "agent": "code_reviewer",

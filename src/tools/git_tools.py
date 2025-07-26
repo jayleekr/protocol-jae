@@ -83,9 +83,7 @@ class GitDiffTool(BaseTool):
             if file_path:
                 cmd.append(file_path)
 
-            result = subprocess.run(
-                cmd, capture_output=True, text=True, check=True
-            )
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
 
             if not result.stdout:
                 return "No changes detected"
@@ -154,9 +152,7 @@ class GitStatusTool(BaseTool):
                         output.append(f"  - {file}")
 
             return (
-                "Git Status:" + "".join(output) 
-                if output 
-                else "Working directory clean"
+                "Git Status:" + "".join(output) if output else "Working directory clean"
             )
 
         except subprocess.CalledProcessError as e:
