@@ -15,7 +15,10 @@ def check_environment():
     # Check if .env file exists
     env_file = Path(".env")
     if not env_file.exists():
-        print("⚠️  .env 파일이 없습니다. .env.example을 복사하여 .env를 만들고 API 키를 설정하세요.")
+        print(
+            "⚠️  .env 파일이 없습니다. "
+            ".env.example을 복사하여 .env를 만들고 API 키를 설정하세요."
+        )
         return False
     
     # Check for API keys
@@ -74,7 +77,9 @@ def run_demo():
         
     except ImportError as e:
         print(f"❌ 모듈 임포트 오류: {e}")
-        print("필요한 패키지가 설치되었는지 확인하세요: pip install -r requirements.txt")
+        print(
+            "필요한 패키지가 설치되었는지 확인하세요: pip install -r requirements.txt"
+        )
     except Exception as e:
         print(f"❌ 예상치 못한 오류: {e}")
 

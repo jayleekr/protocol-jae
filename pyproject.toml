@@ -19,6 +19,15 @@ extend-exclude = '''
 [tool.ruff]
 target-version = "py311"
 line-length = 88
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint]
 select = [
     "E",  # pycodestyle
     "F",  # pyflakes
@@ -27,13 +36,6 @@ select = [
 ignore = []
 fixable = ["ALL"]
 unfixable = []
-exclude = [
-    ".git",
-    ".venv",
-    "__pycache__",
-    "build",
-    "dist",
-]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,7 +1,5 @@
 """Sample code with various quality issues for demonstrating Jae workflow."""
 
-import json
-
 # Poor naming and no type hints
 def calc(x, y, op):
     if op == "+":
