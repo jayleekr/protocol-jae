@@ -1,0 +1,20 @@
+{
+  "file": "test_sample.py",
+  "timestamp": "2025-07-27T18:28:36+09:00",
+  "total_performance_issues": 2,
+  "performance_issues": [
+    {
+      "type": "nested_loop",
+      "severity": "medium",
+      "line": 33,
+      "message": "Nested loop detected - consider optimization (O(n\u00b2) complexity)"
+    },
+    {
+      "type": "nested_loop",
+      "severity": "medium",
+      "line": 51,
+      "message": "Nested loop detected - consider optimization (O(n\u00b2) complexity)"
+    }
+  ],
+  "performance_score": 90
+}

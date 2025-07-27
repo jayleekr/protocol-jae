@@ -1,0 +1,18 @@
+{
+    "agent": "jae-polish-specialist",
+    "input_file": "test_sample.py",
+    "formatted_file": "[0;32m[INFO][0m  2025-07-27 18:28:36: Applying code formatting to: test_sample.py
+[0;32m[INFO][0m  2025-07-27 18:28:36: Code formatting completed: ./jae-output/jae-polish-specialist_20250727_182836/test_sample.py
+./jae-output/jae-polish-specialist_20250727_182836/test_sample.py",
+    "analyze_only": false,
+    "format_only": false,
+    "timestamp": "2025-07-27T18:28:36+09:00",
+    "status": "completed",
+    "output_files": {
+        "static_analysis": "ruff_report.json, pylint_report.json",
+        "complexity_analysis": "complexity_report.json",
+        "code_smells": "code_smells.json",
+        "formatted_code": "test_sample.py",
+        "suggestions": "improvement_suggestions.json"
+    }
+}

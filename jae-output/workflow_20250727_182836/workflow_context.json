@@ -1,0 +1,14 @@
+{
+    "workflow_name": "quality-trio",
+    "workflow_id": "20250727_182836",
+    "start_time": "2025-07-27T18:28:36+09:00",
+    "input_file": "test_sample.py",
+    "agents": [
+  "jae-polish-specialist",
+  "jae-code-reviewer"
+],
+    "environment": {
+        "pwd": "/Users/jaylee/CodeWorkspace/agentic-workflow",
+        "user": "jaylee"
+    }
+}
