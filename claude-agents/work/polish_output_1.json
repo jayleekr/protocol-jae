@@ -1,0 +1,27 @@
+{
+  "analysis": {
+    "complexity_score": 12,
+    "code_smells": ["long function", "nested loops"],
+    "duplicate_blocks": [],
+    "security_concerns": []
+  },
+  "improvements": [
+    {
+      "type": "complexity",
+      "location": "function process_data",
+      "issue": "Triple nested loops with complexity 15",
+      "suggestion": "Extract inner loops to separate functions",
+      "priority": "P2"
+    }
+  ],
+  "improved_code": "# Improved code here...",
+  "metrics": {
+    "before": {"complexity": 15, "lines": 120, "functions": 3},
+    "after": {"complexity": 12, "lines": 100, "functions": 5}
+  },
+  "needs_further_work": true,
+  "feedback_requested": {
+    "reason": "complexity still above threshold",
+    "specific_areas": ["process_data function"]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "workflow": "feedback-loop",
+  "target_file": "test_sample.py",
+  "total_iterations": 5,
+  "quality_met": false,
+  "final_complexity": 12,
+  "timestamp": "2025-07-27T12:34:18Z",
+  "results_location": "claude-agents/results/20250727_213418"
+}
