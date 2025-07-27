@@ -178,6 +178,61 @@ graph LR
 - **Output**: API docs, user guides, architecture documentation
 - **Tools**: Doc generators, template engines, content analyzers
 
+### Phase 4: Analytics and Intelligence
+
+The fourth phase introduces advanced analytics and intelligence capabilities:
+
+```mermaid
+graph TB
+    subgraph "Phase 4: Analytics & Intelligence"
+        GA[Repository Analyzer<br/>GitHub Metadata Analysis]
+        CM[Code Metrics Collector<br/>Quantitative Analysis]
+        HE[Health Evaluator<br/>Comprehensive Assessment]
+        IS[Improvement Strategist<br/>Strategic Planning]
+        RO[Insights Orchestrator<br/>Master Coordination]
+    end
+    
+    GA --> HE
+    CM --> HE
+    HE --> IS
+    GA --> RO
+    CM --> RO
+    HE --> RO
+    IS --> RO
+    RO --> Analytics[Analytics Dashboard]
+    RO --> Strategy[Strategic Roadmap]
+```
+
+#### Repository Analyzer
+- **Purpose**: GitHub metadata collection and repository health analysis
+- **Input**: GitHub repository URL, access tokens, analysis parameters
+- **Output**: Commit patterns, collaboration metrics, workflow efficiency data
+- **Tools**: GitHub API, PyGithub, statistical analysis libraries
+
+#### Code Metrics Collector
+- **Purpose**: Quantitative code quality analysis and technical debt measurement
+- **Input**: Source code, test files, dependency information
+- **Output**: Complexity metrics, quality indicators, technical debt calculations
+- **Tools**: AST parsers, complexity analyzers, duplication detectors
+
+#### Health Evaluator
+- **Purpose**: Comprehensive project health assessment and benchmarking
+- **Input**: Repository data, code metrics, historical trends
+- **Output**: Health scores, risk assessments, trend analysis
+- **Tools**: Statistical models, benchmarking databases, risk calculators
+
+#### Improvement Strategist
+- **Purpose**: Data-driven improvement strategy development
+- **Input**: Health evaluations, team capacity, organizational constraints
+- **Output**: Prioritized action plans, ROI analysis, implementation roadmaps
+- **Tools**: Optimization algorithms, ROI calculators, project planning frameworks
+
+#### Repository Insights Orchestrator
+- **Purpose**: Master coordination of analytics workflow and report generation
+- **Input**: All analytics agent outputs, configuration settings
+- **Output**: Comprehensive dashboards, executive reports, interactive visualizations
+- **Tools**: Workflow engines, visualization libraries, report generators
+
 ## 3. Technical Infrastructure
 
 ### Command-Based Architecture

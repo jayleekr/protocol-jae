@@ -1,0 +1,217 @@
+# GitHub Analytics Agents Configuration
+agents:
+  # Phase 4: Analytics and Intelligence
+  jae-repo-analyzer:
+    phase: 4
+    order: 1
+    command: "agents/jae-repo-analyzer/run.sh"
+    description: "GitHub repository metadata collection and analysis"
+    timeout: 600
+    required_tools:
+      - github_api
+      - pygithub
+      - statistical_analyzer
+      - data_processor
+    inputs:
+      - repository_url
+      - access_token
+      - analysis_config
+    outputs:
+      - repo_metadata
+      - commit_patterns
+      - collaboration_metrics
+      - workflow_efficiency
+
+  jae-code-metrics-collector:
+    phase: 4
+    order: 2
+    command: "agents/jae-code-metrics-collector/run.sh"
+    description: "Code quantification and quality analysis"
+    timeout: 900
+    required_tools:
+      - ast_parser
+      - complexity_analyzer
+      - duplication_detector
+      - coverage_calculator
+    inputs:
+      - source_code_path
+      - project_config
+      - quality_standards
+    outputs:
+      - complexity_metrics
+      - quality_indicators
+      - technical_debt_report
+      - test_metrics
+
+  jae-project-health-evaluator:
+    phase: 4
+    order: 3
+    command: "agents/jae-project-health-evaluator/run.sh"
+    description: "Comprehensive project health assessment"
+    timeout: 450
+    required_tools:
+      - health_calculator
+      - benchmark_database
+      - risk_assessor
+      - trend_analyzer
+    inputs:
+      - repo_analysis_data
+      - code_metrics_data
+      - historical_data
+    outputs:
+      - health_score
+      - risk_assessment
+      - trend_analysis
+      - benchmarking_report
+
+  jae-improvement-strategist:
+    phase: 4
+    order: 4
+    command: "agents/jae-improvement-strategist/run.sh"
+    description: "Data-driven improvement strategy development"
+    timeout: 600
+    required_tools:
+      - roi_calculator
+      - prioritization_engine
+      - roadmap_generator
+      - resource_planner
+    inputs:
+      - health_evaluation
+      - team_capacity
+      - organizational_constraints
+    outputs:
+      - improvement_opportunities
+      - strategic_roadmap
+      - roi_analysis
+      - implementation_plan
+
+  jae-repo-insights-orchestrator:
+    phase: 4
+    order: 5
+    command: "agents/jae-repo-insights-orchestrator/run.sh"
+    description: "Master coordination and comprehensive reporting"
+    timeout: 1200
+    required_tools:
+      - workflow_engine
+      - visualization_generator
+      - report_builder
+      - dashboard_creator
+    inputs:
+      - all_analysis_results
+      - output_configuration
+      - user_preferences
+    outputs:
+      - executive_dashboard
+      - detailed_reports
+      - interactive_visualizations
+      - action_items
+
+# GitHub Analytics Workflows
+workflows:
+  basic-repository-analysis:
+    name: "Basic Repository Analysis"
+    description: "Quick repository health check"
+    agents:
+      - jae-repo-analyzer
+      - jae-repo-insights-orchestrator
+    
+  comprehensive-code-analysis:
+    name: "Comprehensive Code Analysis"
+    description: "Deep code quality and metrics analysis"
+    agents:
+      - jae-repo-analyzer
+      - jae-code-metrics-collector
+      - jae-repo-insights-orchestrator
+    
+  full-health-assessment:
+    name: "Full Project Health Assessment"
+    description: "Complete health evaluation with strategic insights"
+    agents:
+      - jae-repo-analyzer
+      - jae-code-metrics-collector
+      - jae-project-health-evaluator
+      - jae-repo-insights-orchestrator
+    
+  strategic-improvement-planning:
+    name: "Strategic Improvement Planning"
+    description: "End-to-end analysis with improvement strategy"
+    agents:
+      - jae-repo-analyzer
+      - jae-code-metrics-collector
+      - jae-project-health-evaluator
+      - jae-improvement-strategist
+      - jae-repo-insights-orchestrator
+
+# Analysis Configuration Templates
+analysis_templates:
+  basic:
+    depth: "surface"
+    historical_days: 30
+    include_dependencies: false
+    benchmark_sources: []
+    
+  standard:
+    depth: "moderate"
+    historical_days: 90
+    include_dependencies: true
+    benchmark_sources: ["industry_standards"]
+    
+  comprehensive:
+    depth: "deep"
+    historical_days: 180
+    include_dependencies: true
+    benchmark_sources: ["industry_standards", "organization_peers", "similar_projects"]
+
+# Output Format Options
+output_formats:
+  - json
+  - html
+  - pdf
+  - excel
+  - interactive_dashboard
+
+# Notification Settings
+notifications:
+  enabled: true
+  channels:
+    slack:
+      webhook_url: "${SLACK_WEBHOOK_URL}"
+      channels: ["#development-metrics", "#team-updates"]
+    email:
+      smtp_server: "${SMTP_SERVER}"
+      recipients: ["team-lead@company.com", "engineering-manager@company.com"]
+  
+  triggers:
+    health_score_threshold: 70
+    risk_level_threshold: "high"
+    trend_degradation: true
+    new_opportunities: true
+
+# Dashboard Configuration
+dashboard:
+  enabled: true
+  auto_refresh: true
+  refresh_interval: "1h"
+  public_access: false
+  authentication:
+    type: "github_oauth"
+    allowed_orgs: ["your-organization"]
+
+# Integration Settings
+integrations:
+  github:
+    api_url: "https://api.github.com"
+    enterprise_url: "${GITHUB_ENTERPRISE_URL}"
+    token: "${GITHUB_TOKEN}"
+    
+  tools:
+    sonarqube:
+      url: "${SONARQUBE_URL}"
+      token: "${SONARQUBE_TOKEN}"
+    
+    code_climate:
+      api_key: "${CODE_CLIMATE_API_KEY}"
+    
+    prometheus:
+      url: "${PROMETHEUS_URL}"
+      metrics_prefix: "jae_analytics"

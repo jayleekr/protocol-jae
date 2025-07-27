@@ -52,7 +52,9 @@ This book will take you on a journey from understanding basic agentic concepts t
 1. **Chapters 1-3**: Build foundational understanding
 2. **Chapters 4-6**: Hands-on practice with core agents
 3. **Chapters 7-9**: Advanced concepts and custom development
-4. **Chapters 10-12**: Enterprise implementation and future directions
+4. **Chapters 10-12**: Enterprise implementation and collaboration
+5. **Chapter 13**: GitHub Analytics and Repository Insights
+6. **Chapter 14**: Future directions and emerging trends
 
 ### Practical Approach
 Each chapter includes:

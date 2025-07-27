@@ -387,6 +387,15 @@ class JAEShortTermRoadmap:
         
         features = ReleaseFeatures("JAE 2.0")
         
+        # GitHub 분석 시스템
+        features.add_feature(
+            name="GitHub 분석 시스템",
+            description="포괄적인 저장소 분석 및 인사이트 플랫폼",
+            priority="high",
+            impact="data_driven_development",
+            implementation_effort="high"
+        )
+        
         # 향상된 에이전트 통신
         features.add_feature(
             name="고급 에이전트 메시징",
