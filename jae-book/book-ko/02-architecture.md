@@ -2,7 +2,7 @@
 title: JAE 시스템 아키텍처
 chapter: 2
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 20분
 ---
 

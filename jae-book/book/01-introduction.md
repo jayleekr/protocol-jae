@@ -2,7 +2,7 @@
 title: Understanding Agentic Development
 chapter: 1
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 15 minutes
 ---
 

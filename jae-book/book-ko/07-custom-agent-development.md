@@ -2,7 +2,7 @@
 title: 사용자 정의 에이전트 개발
 chapter: 7
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 25분
 ---
 

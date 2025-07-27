@@ -2,7 +2,7 @@
 title: 워크플로우 디자인 패턴
 chapter: 8
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 28분
 ---
 

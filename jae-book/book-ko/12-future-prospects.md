@@ -2,7 +2,7 @@
 title: 미래 전망 및 로드맵
 chapter: 12
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 20분
 ---
 

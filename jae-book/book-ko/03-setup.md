@@ -2,7 +2,7 @@
 title: 환경 설정 및 구성
 chapter: 3
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 25 minutes
 ---
 

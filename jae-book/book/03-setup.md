@@ -2,7 +2,7 @@
 title: Environment Setup and Configuration
 chapter: 3
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 25 minutes
 ---
 

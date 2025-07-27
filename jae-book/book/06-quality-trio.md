@@ -2,7 +2,7 @@
 title: Quality Trio Workflow
 chapter: 6
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 22 minutes
 ---
 

@@ -2,7 +2,7 @@
 title: 팀 협업 전략
 chapter: 10
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 24분
 ---
 

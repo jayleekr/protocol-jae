@@ -2,7 +2,7 @@
 title: 엔터프라이즈 구현
 chapter: 9
 author: JAE Team
-date: 2025-01-27
+date: 2025-07-27
 reading_time: 30분
 ---
 
