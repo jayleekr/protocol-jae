@@ -1,0 +1,43 @@
+# JAE Workflow Configuration
+# 워크플로우별 실행 순서 및 설정
+
+version: "1.0.0"
+
+workflows:
+  quality-trio:
+    name: "Quality Trio MVP"
+    description: "Polish + Review + Test 에이전트 워크플로우"
+    agents:
+      - jae-polish-specialist
+      - jae-code-reviewer
+      - jae-test-engineer
+    
+  security-focused:
+    name: "Security Focused Workflow"
+    description: "보안 중심 워크플로우"
+    agents:
+      - jae-polish-specialist
+      - jae-security-guardian
+      - jae-code-reviewer
+      - jae-test-engineer
+      
+  full-workflow:
+    name: "Full JAE Workflow"
+    description: "전체 9개 에이전트 워크플로우"
+    agents:
+      - jae-vibe-specialist
+      - jae-flow-specialist
+      - jae-polish-specialist
+      - jae-security-guardian
+      - jae-code-reviewer
+      - jae-test-engineer
+      - jae-ui-architect
+      - jae-performance-optimizer
+      - jae-documentation-scribe
+
+# 실행 설정
+execution:
+  max_parallel_agents: 2
+  default_timeout: 300
+  retry_attempts: 2
+  log_level: "INFO"

@@ -1,0 +1,27 @@
+{
+    "workflow_name": "quality-trio",
+    "workflow_id": "20250727_114314",
+    "status": "success",
+    "start_time": "",
+    "end_time": "2025-07-27T11:43:15+09:00",
+    "duration_seconds": 1,
+    "input_file": "test_sample.py",
+    "statistics": {
+        "total_agents": 2,
+        "success": 2,
+        "failed": 0
+    },
+    "agent_results": [
+        {
+            "agent": "jae-polish-specialist",
+            "status": "success",
+            "output_dir": "./jae-output/jae-polish-specialist_20250727_114314"
+        }
+,
+        {
+            "agent": "jae-code-reviewer",
+            "status": "success",
+            "output_dir": "./jae-output/jae-code-reviewer_20250727_114314"
+        }
+    ]
+}

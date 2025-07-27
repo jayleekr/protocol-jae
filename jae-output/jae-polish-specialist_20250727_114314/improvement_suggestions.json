@@ -1,0 +1,49 @@
+{
+  "file": "test_sample.py",
+  "timestamp": "2025-07-27T11:43:14+09:00",
+  "suggestions": [
+    {
+      "type": "code_smell",
+      "tool": "ast_analyzer",
+      "line": 24,
+      "message": "Function 'add_user' has too many parameters (11)",
+      "smell_type": "too_many_parameters",
+      "priority": "medium"
+    },
+    {
+      "type": "code_smell",
+      "tool": "ast_analyzer",
+      "line": 33,
+      "message": "Nested loop detected - consider optimization",
+      "smell_type": "nested_loop",
+      "priority": "medium"
+    },
+    {
+      "type": "code_smell",
+      "tool": "ast_analyzer",
+      "line": 51,
+      "message": "Nested loop detected - consider optimization",
+      "smell_type": "nested_loop",
+      "priority": "medium"
+    },
+    {
+      "type": "general",
+      "tool": "polish_specialist",
+      "message": "Consider adding type hints for better code clarity",
+      "priority": "medium"
+    },
+    {
+      "type": "general",
+      "tool": "polish_specialist",
+      "message": "Add docstrings for public functions and classes",
+      "priority": "medium"
+    },
+    {
+      "type": "general",
+      "tool": "polish_specialist",
+      "message": "Consider extracting magic numbers into named constants",
+      "priority": "low"
+    }
+  ],
+  "total_suggestions": 6
+}

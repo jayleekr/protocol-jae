@@ -1,0 +1,67 @@
+{
+  "file": "test_sample.py",
+  "timestamp": "2025-07-27T11:43:15+09:00",
+  "total_issues": 9,
+  "issues": [
+    {
+      "type": "documentation",
+      "severity": "low",
+      "line": 7,
+      "message": "Public function 'calc' missing docstring"
+    },
+    {
+      "type": "naming",
+      "severity": "medium",
+      "line": 19,
+      "message": "Class 'user_manager' should use PascalCase naming"
+    },
+    {
+      "type": "documentation",
+      "severity": "low",
+      "line": 24,
+      "message": "Public function 'add_user' missing docstring"
+    },
+    {
+      "type": "design",
+      "severity": "medium",
+      "line": 24,
+      "message": "Function 'add_user' has too many parameters (11)"
+    },
+    {
+      "type": "documentation",
+      "severity": "low",
+      "line": 32,
+      "message": "Public function 'get_user_by_email' missing docstring"
+    },
+    {
+      "type": "documentation",
+      "severity": "low",
+      "line": 39,
+      "message": "Public function 'delete_user' missing docstring"
+    },
+    {
+      "type": "error_handling",
+      "severity": "medium",
+      "line": 45,
+      "message": "Avoid bare except or catching Exception too broadly"
+    },
+    {
+      "type": "documentation",
+      "severity": "low",
+      "line": 49,
+      "message": "Public function 'process_data' missing docstring"
+    },
+    {
+      "type": "documentation",
+      "severity": "low",
+      "line": 59,
+      "message": "Public function 'increment' missing docstring"
+    }
+  ],
+  "statistics": {
+    "functions_count": 7,
+    "classes_count": 1,
+    "functions_with_docstring": 0,
+    "public_functions": 6
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "file": "test_sample.py",
+  "timestamp": "2025-07-27T11:43:15.166781",
+  "focus_area": "all",
+  "overall_score": 83.7,
+  "detailed_scores": {
+    "functionality": 55,
+    "security": 100,
+    "performance": 90,
+    "style": 96
+  },
+  "total_issues": {
+    "critical": 0,
+    "functionality": 9,
+    "security": 0,
+    "performance": 2,
+    "style": 2
+  },
+  "critical_issues": [],
+  "improvement_suggestions": [
+    "Improve function documentation and naming conventions"
+  ],
+  "praise_points": [
+    "Excellent security practices",
+    "Efficient algorithm implementation",
+    "Consistent code style"
+  ],
+  "recommendation": "APPROVE"
+}

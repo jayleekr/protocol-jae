@@ -1,0 +1,23 @@
+{
+  "file": "test_sample.py",
+  "timestamp": "2025-07-27T11:43:15+09:00",
+  "total_style_issues": 2,
+  "style_issues": [
+    {
+      "type": "line_length",
+      "severity": "low",
+      "line": 24,
+      "message": "Line too long (93 > 88 characters)"
+    },
+    {
+      "type": "line_length",
+      "severity": "low",
+      "line": 25,
+      "message": "Line too long (174 > 88 characters)"
+    }
+  ],
+  "statistics": {
+    "total_lines": 69,
+    "long_lines": 2
+  }
+}

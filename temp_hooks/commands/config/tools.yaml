@@ -1,0 +1,295 @@
+# JAE Tools Configuration
+# 각 도구의 설정 및 통합 정보 정의
+
+version: "1.0.0"
+
+tools:
+  # Git 관련 도구
+  git_integration:
+    name: "Git Integration Tool"
+    type: "git"
+    executable: "git"
+    required: true
+    config:
+      auto_commit: false
+      branch_strategy: "feature"
+      commit_template: "JAE: {agent} - {summary}"
+    
+  # 코드 분석 도구
+  static_analyzer:
+    name: "Static Code Analyzer"
+    type: "analysis"
+    tools:
+      - name: "ruff"
+        executable: "ruff"
+        config_file: ".ruff.toml"
+        args: ["check", "--select=E,F,I", "--format=json"]
+      - name: "pylint"
+        executable: "pylint"
+        config_file: ".pylintrc"
+        args: ["--output-format=json"]
+      - name: "mypy"
+        executable: "mypy"
+        config_file: "mypy.ini"
+        args: ["--show-error-codes", "--json-report"]
+        
+  code_formatter:
+    name: "Code Formatter"
+    type: "formatting"
+    tools:
+      - name: "black"
+        executable: "black"
+        args: ["--line-length=88", "--target-version=py311"]
+      - name: "isort"
+        executable: "isort"
+        args: ["--profile=black"]
+        
+  complexity_analyzer:
+    name: "Complexity Analyzer"
+    type: "analysis"
+    tools:
+      - name: "radon"
+        executable: "radon"
+        args: ["cc", "--json", "--min=B"]
+      - name: "xenon"
+        executable: "xenon"
+        args: ["--max-absolute=B", "--json"]
+        
+  duplication_detector:
+    name: "Code Duplication Detector"
+    type: "analysis"
+    tools:
+      - name: "jscpd"
+        executable: "jscpd"
+        args: ["--format=json", "--min-lines=5"]
+        
+  # 테스트 도구
+  test_runner:
+    name: "Test Runner"
+    type: "testing"
+    tools:
+      - name: "pytest"
+        executable: "pytest"
+        config_file: "pytest.ini"
+        args: ["-v", "--json-report", "--json-report-file=test-report.json"]
+      - name: "unittest"
+        executable: "python"
+        args: ["-m", "unittest", "discover", "-v"]
+        
+  coverage_analyzer:
+    name: "Coverage Analyzer"
+    type: "testing"
+    tools:
+      - name: "coverage"
+        executable: "coverage"
+        args: ["run", "--source=src", "-m", "pytest"]
+        report_args: ["report", "--format=json"]
+        
+  test_generator:
+    name: "Test Generator"
+    type: "testing"
+    framework: "pytest"
+    templates:
+      unit_test: "templates/unit_test.py.j2"
+      integration_test: "templates/integration_test.py.j2"
+      
+  # 보안 도구
+  sast_scanner:
+    name: "Static Application Security Testing"
+    type: "security"
+    tools:
+      - name: "bandit"
+        executable: "bandit"
+        args: ["-r", "-f", "json"]
+      - name: "semgrep"
+        executable: "semgrep"
+        args: ["--config=auto", "--json"]
+        
+  dependency_checker:
+    name: "Dependency Vulnerability Checker"
+    type: "security"
+    tools:
+      - name: "safety"
+        executable: "safety"
+        args: ["check", "--json"]
+      - name: "pip-audit"
+        executable: "pip-audit"
+        args: ["--format=json"]
+        
+  secret_scanner:
+    name: "Secret Scanner"
+    type: "security"
+    tools:
+      - name: "detect-secrets"
+        executable: "detect-secrets"
+        args: ["scan", "--force-use-all-plugins"]
+      - name: "truffleHog"
+        executable: "truffleHog"
+        args: ["--json"]
+        
+  # 성능 도구
+  profiler:
+    name: "Python Profiler"
+    type: "performance"
+    tools:
+      - name: "cProfile"
+        executable: "python"
+        args: ["-m", "cProfile", "-o", "profile.stats"]
+      - name: "py-spy"
+        executable: "py-spy"
+        args: ["record", "-o", "profile.svg"]
+        
+  benchmark_runner:
+    name: "Benchmark Runner"
+    type: "performance"
+    tools:
+      - name: "pytest-benchmark"
+        executable: "pytest"
+        args: ["--benchmark-json=benchmark.json"]
+        
+  memory_analyzer:
+    name: "Memory Analyzer"
+    type: "performance"
+    tools:
+      - name: "memory-profiler"
+        executable: "mprof"
+        args: ["run", "--python"]
+        
+  # UI/Frontend 도구
+  component_generator:
+    name: "UI Component Generator"
+    type: "frontend"
+    frameworks:
+      react:
+        template_dir: "templates/react"
+        extensions: [".tsx", ".jsx"]
+      vue:
+        template_dir: "templates/vue"
+        extensions: [".vue"]
+        
+  accessibility_checker:
+    name: "Accessibility Checker"
+    type: "frontend"
+    tools:
+      - name: "axe-core"
+        executable: "axe"
+        args: ["--reporter=json"]
+      - name: "lighthouse"
+        executable: "lighthouse"
+        args: ["--output=json", "--only-categories=accessibility"]
+        
+  # 문서화 도구
+  documentation_generator:
+    name: "Documentation Generator"
+    type: "documentation"
+    tools:
+      - name: "sphinx"
+        executable: "sphinx-build"
+        args: ["-b", "html"]
+      - name: "mkdocs"
+        executable: "mkdocs"
+        args: ["build"]
+        
+  api_doc_extractor:
+    name: "API Documentation Extractor"
+    type: "documentation"
+    tools:
+      - name: "pydoc"
+        executable: "pydoc"
+        args: ["-w"]
+      - name: "pdoc"
+        executable: "pdoc"
+        args: ["--html", "--output-dir=docs"]
+        
+  diagram_generator:
+    name: "Diagram Generator"
+    type: "documentation"
+    tools:
+      - name: "mermaid"
+        executable: "mmdc"
+        args: ["-i", "-o"]
+      - name: "plantuml"
+        executable: "plantuml"
+        args: ["-tsvg"]
+
+# 도구 그룹 정의
+tool_groups:
+  code_quality:
+    - static_analyzer
+    - code_formatter
+    - complexity_analyzer
+    - duplication_detector
+    
+  security_suite:
+    - sast_scanner
+    - dependency_checker
+    - secret_scanner
+    
+  testing_suite:
+    - test_runner
+    - coverage_analyzer
+    - test_generator
+    
+  performance_suite:
+    - profiler
+    - benchmark_runner
+    - memory_analyzer
+    
+  frontend_suite:
+    - component_generator
+    - accessibility_checker
+    
+  documentation_suite:
+    - documentation_generator
+    - api_doc_extractor
+    - diagram_generator
+
+# 설치 및 설정
+installation:
+  python_packages:
+    - name: "ruff"
+      version: ">=0.1.0"
+    - name: "black"
+      version: ">=23.0.0"
+    - name: "pylint"
+      version: ">=3.0.0"
+    - name: "mypy"
+      version: ">=1.0.0"
+    - name: "pytest"
+      version: ">=7.0.0"
+    - name: "coverage"
+      version: ">=7.0.0"
+    - name: "bandit"
+      version: ">=1.7.0"
+    - name: "safety"
+      version: ">=2.0.0"
+      
+  system_packages:
+    - name: "git"
+      required: true
+    - name: "nodejs"
+      version: ">=18.0.0"
+      required_for: ["frontend_suite"]
+    - name: "docker"
+      required_for: ["container_scanner"]
+      
+  optional_packages:
+    - name: "semgrep"
+      description: "Advanced SAST scanning"
+    - name: "lighthouse"
+      description: "Web performance auditing"
+    - name: "axe-core"
+      description: "Accessibility testing"
+
+# 환경 설정
+environment:
+  variables:
+    JAE_TOOLS_DIR: "./temp_hooks/commands/tools"
+    JAE_CONFIG_DIR: "./temp_hooks/commands/config"
+    JAE_OUTPUT_DIR: "./jae-output"
+    JAE_TEMP_DIR: "/tmp/jae-tools"
+    
+  paths:
+    - "./temp_hooks/commands/tools/bin"
+    - "./node_modules/.bin"
+    - "~/.local/bin"

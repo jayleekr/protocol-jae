@@ -1,0 +1,17 @@
+{
+    "agent": "jae-code-reviewer",
+    "status": "success",
+    "message": "Code review completed successfully",
+    "timestamp": "2025-07-27T11:43:15+09:00",
+    "duration_seconds": 1,
+    "output_files": [
+  "./jae-output/jae-code-reviewer_20250727_114314/style_review.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/summary.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/security_review.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/result.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/review_summary.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/performance_review.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/context.json",
+  "./jae-output/jae-code-reviewer_20250727_114314/functionality_review.json"
+]
+}

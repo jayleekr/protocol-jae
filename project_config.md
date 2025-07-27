@@ -49,10 +49,17 @@ _Last updated: 2025-07-27_
 - jae-documentation-scribe: 기술 문서 작성 및 관리 전문가
 
 ## Deliverables
-- `/agents/`: 9개 에이전트 역할 정의 문서 (markdown)
-- `jae-integrated-workflow.md`: 통합 워크플로우 설계 문서
-- CrewAI 기반 구현 준비 완료
+- `/agents/`: 9개 에이전트 역할 정의 문서 (markdown) ✅
+- `jae-integrated-workflow.md`: 통합 워크플로우 설계 문서 ✅
+- `/temp_hooks/commands/`: 워크플로우 통합 시스템 ✅
+  - 에이전트별 command 스크립트 (polish-specialist, code-reviewer)
+  - 자동 호출 메커니즘 및 데이터 핸드오프
+  - 전문화된 도구 통합 (ruff, pylint, black, radon)
+- 통합 테스트 검증 ✅
+- 사용법 가이드 문서 ✅
 
 ## Changelog
 - 2025-07-13: Cleansed out.
 - 2025-07-27: JAE 에이전트 아키텍처 설계 및 문서화 완료
+- 2025-07-27: temp_hooks/commands/ 기반 워크플로우 시스템 구현 완료
+- 2025-07-27: Polish Specialist & Code Reviewer 에이전트 작동 확인

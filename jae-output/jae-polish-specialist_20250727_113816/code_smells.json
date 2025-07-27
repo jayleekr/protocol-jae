@@ -1,0 +1,25 @@
+{
+  "file": "test_sample.py",
+  "timestamp": "2025-07-27T11:38:16+09:00",
+  "total_smells": 3,
+  "smells": [
+    {
+      "type": "too_many_parameters",
+      "line": 24,
+      "message": "Function 'add_user' has too many parameters (11)",
+      "severity": "medium"
+    },
+    {
+      "type": "nested_loop",
+      "line": 33,
+      "message": "Nested loop detected - consider optimization",
+      "severity": "medium"
+    },
+    {
+      "type": "nested_loop",
+      "line": 51,
+      "message": "Nested loop detected - consider optimization",
+      "severity": "medium"
+    }
+  ]
+}

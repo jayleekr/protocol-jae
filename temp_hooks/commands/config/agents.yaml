@@ -1,0 +1,294 @@
+# JAE Agents Configuration
+# 각 에이전트의 설정 및 메타데이터 정의
+
+version: "1.0.0"
+
+agents:
+  # Phase 1: 핵심 워크플로우
+  jae-vibe-specialist:
+    phase: 1
+    order: 1
+    name: "JAE Vibe Specialist"
+    description: "BDD/아이디어 구체화 전문가"
+    role: "BDD/아이디어 구체화 전문가"
+    enabled: true
+    command: "agents/jae-vibe-specialist/run.sh"
+    timeout: 300  # seconds
+    required_tools:
+      - gherkin_parser
+      - nlp_analyzer
+      - template_engine
+      - jira_integration
+    input_types:
+      - user_story
+      - requirements_doc
+      - stakeholder_feedback
+    output_types:
+      - bdd_scenarios
+      - feature_files
+      - test_cases
+    dependencies: []
+    
+  jae-flow-specialist:
+    phase: 1
+    order: 2
+    name: "JAE Flow Specialist"
+    description: "PR/TDD 워크플로우 최적화 전문가"
+    role: "PR/TDD 워크플로우 최적화 전문가"
+    enabled: true
+    command: "agents/jae-flow-specialist/run.sh"
+    timeout: 600
+    required_tools:
+      - git_integration
+      - test_runner
+      - coverage_analyzer
+      - pr_automation
+      - ci_cd_integration
+    input_types:
+      - bdd_scenarios
+      - existing_codebase
+      - tech_requirements
+    output_types:
+      - test_code
+      - implementation_code
+      - pull_request
+      - coverage_report
+    dependencies:
+      - jae-vibe-specialist
+    
+  jae-polish-specialist:
+    phase: 1
+    order: 3
+    name: "JAE Polish Specialist"
+    description: "코드 품질 개선 및 리팩토링 전문가"
+    role: "코드 품질 개선 및 리팩토링 전문가"
+    enabled: true
+    command: "agents/jae-polish-specialist/run.sh"
+    timeout: 450
+    required_tools:
+      - static_analyzer
+      - code_formatter
+      - complexity_analyzer
+      - duplication_detector
+      - refactoring_tools
+    input_types:
+      - implementation_code
+      - static_analysis_report
+      - code_metrics
+    output_types:
+      - refactored_code
+      - improvement_report
+      - quality_metrics
+    dependencies:
+      - jae-flow-specialist
+
+  # Phase 2: 품질 및 보안 보증
+  jae-security-guardian:
+    phase: 2
+    order: 4
+    name: "JAE Security Guardian"
+    description: "ISMS-P/보안 규정 준수 전문가"
+    role: "ISMS-P/보안 규정 준수 전문가"
+    enabled: true
+    command: "agents/jae-security-guardian/run.sh"
+    timeout: 300
+    required_tools:
+      - sast_scanner
+      - dependency_checker
+      - secret_scanner
+      - container_scanner
+      - policy_engine
+    input_types:
+      - source_code
+      - dependency_files
+      - config_files
+    output_types:
+      - security_report
+      - vulnerability_fixes
+      - compliance_status
+    dependencies:
+      - jae-polish-specialist
+    parallel_with:
+      - jae-code-reviewer
+    blocking_conditions:
+      - high_severity_vulnerabilities
+      
+  jae-code-reviewer:
+    phase: 2
+    order: 5
+    name: "JAE Code Reviewer"
+    description: "코드 리뷰 및 표준 준수 전문가"
+    role: "코드 리뷰 및 표준 준수 전문가"
+    enabled: true
+    command: "agents/jae-code-reviewer/run.sh"
+    timeout: 400
+    required_tools:
+      - ast_parser
+      - pattern_matcher
+      - metrics_calculator
+      - style_checker
+      - pr_integration
+    input_types:
+      - refactored_code
+      - security_verified_code
+      - pr_metadata
+    output_types:
+      - review_comments
+      - approval_decision
+      - quality_score
+    dependencies:
+      - jae-polish-specialist
+      - jae-security-guardian
+      
+  jae-test-engineer:
+    phase: 2
+    order: 6
+    name: "JAE Test Engineer"
+    description: "테스트 자동화 및 커버리지 전문가"
+    role: "테스트 자동화 및 커버리지 전문가"
+    enabled: true
+    command: "agents/jae-test-engineer/run.sh"
+    timeout: 500
+    required_tools:
+      - test_generator
+      - coverage_analyzer
+      - test_runner
+      - mock_generator
+      - fixture_manager
+    input_types:
+      - reviewed_code
+      - bdd_scenarios
+      - existing_tests
+    output_types:
+      - test_suite
+      - coverage_report
+      - test_results
+    dependencies:
+      - jae-code-reviewer
+    quality_gates:
+      - min_coverage: 85
+      - test_success_rate: 100
+
+  # Phase 3: 도메인 특화
+  jae-ui-architect:
+    phase: 3
+    order: 7
+    name: "JAE UI Architect"
+    description: "UI 컴포넌트 설계 및 생성 전문가"
+    role: "UI 컴포넌트 설계 및 생성 전문가"
+    enabled: true
+    command: "agents/jae-ui-architect/run.sh"
+    timeout: 400
+    required_tools:
+      - component_generator
+      - design_token_parser
+      - accessibility_checker
+      - responsive_tester
+      - storybook_generator
+    input_types:
+      - design_specs
+      - wireframes
+      - accessibility_requirements
+    output_types:
+      - ui_components
+      - storybook_stories
+      - component_docs
+    dependencies:
+      - jae-test-engineer
+    conditions:
+      - frontend_code_present: true
+      
+  jae-performance-optimizer:
+    phase: 3
+    order: 8
+    name: "JAE Performance Optimizer"
+    description: "성능 분석 및 최적화 전문가"
+    role: "성능 분석 및 최적화 전문가"
+    enabled: true
+    command: "agents/jae-performance-optimizer/run.sh"
+    timeout: 450
+    required_tools:
+      - profiler
+      - benchmark_runner
+      - memory_analyzer
+      - query_optimizer
+      - bundle_analyzer
+    input_types:
+      - application_code
+      - performance_metrics
+      - system_metrics
+    output_types:
+      - performance_report
+      - optimized_code
+      - benchmark_results
+    dependencies:
+      - jae-test-engineer
+      - jae-ui-architect  # optional
+      
+  jae-documentation-scribe:
+    phase: 3
+    order: 9
+    name: "JAE Documentation Scribe"
+    description: "기술 문서 작성 및 관리 전문가"
+    role: "기술 문서 작성 및 관리 전문가"
+    enabled: true
+    command: "agents/jae-documentation-scribe/run.sh"
+    timeout: 300
+    required_tools:
+      - documentation_generator
+      - api_doc_extractor
+      - diagram_generator
+      - link_checker
+      - search_indexer
+    input_types:
+      - final_codebase
+      - commit_history
+      - design_decisions
+    output_types:
+      - documentation_site
+      - api_docs
+      - developer_guide
+    dependencies:
+      - jae-performance-optimizer
+
+# 워크플로우 설정
+workflows:
+  quality-trio:
+    name: "Quality Trio MVP"
+    description: "3개 핵심 에이전트 워크플로우"
+    agents:
+      - jae-polish-specialist
+      - jae-code-reviewer
+      - jae-test-engineer
+    
+  security-focused:
+    name: "Security Focused Workflow"
+    description: "보안 중심 워크플로우"
+    agents:
+      - jae-polish-specialist
+      - jae-security-guardian
+      - jae-code-reviewer
+      - jae-test-engineer
+      
+  full-workflow:
+    name: "Full JAE Workflow"
+    description: "전체 9개 에이전트 워크플로우"
+    agents:
+      - jae-vibe-specialist
+      - jae-flow-specialist
+      - jae-polish-specialist
+      - jae-security-guardian
+      - jae-code-reviewer
+      - jae-test-engineer
+      - jae-ui-architect
+      - jae-performance-optimizer
+      - jae-documentation-scribe
+
+# 글로벌 설정
+global:
+  max_parallel_agents: 2
+  default_timeout: 300
+  retry_attempts: 2
+  log_level: "INFO"
+  temp_dir: "/tmp/jae-workflow"
+  output_dir: "./jae-output"

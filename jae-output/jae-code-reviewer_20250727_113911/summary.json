@@ -1,0 +1,15 @@
+{
+    "agent": "jae-code-reviewer",
+    "input_file": "test_sample.py",
+    "focus_area": "security",
+    "strict_mode": false,
+    "timestamp": "2025-07-27T11:39:11+09:00",
+    "status": "completed",
+    "output_files": {
+        "functionality_review": "functionality_review.json",
+        "security_review": "security_review.json", 
+        "performance_review": "performance_review.json",
+        "style_review": "style_review.json",
+        "review_summary": "review_summary.json"
+    }
+}
