@@ -1,0 +1,180 @@
+# Book Creation Sub-agents Configuration
+agents:
+  # Content Creation Agents
+  jae-content-writer:
+    phase: 1
+    order: 1
+    command: "agents/jae-content-writer/run.sh"
+    description: "Technical content writing and markdown generation"
+    timeout: 600
+    required_tools:
+      - markdown_generator
+      - content_validator
+      - spell_checker
+    inputs:
+      - topic_outline
+      - reference_docs
+    outputs:
+      - draft_content
+      - metadata
+
+  jae-translator:
+    phase: 1
+    order: 2
+    command: "agents/jae-translator/run.sh"
+    description: "Multilingual translation specialist (En <-> Ko)"
+    timeout: 900
+    required_tools:
+      - translation_api
+      - terminology_database
+      - context_analyzer
+    inputs:
+      - source_content
+      - source_language
+      - target_language
+    outputs:
+      - translated_content
+      - translation_notes
+
+  jae-diagram-creator:
+    phase: 1
+    order: 3
+    command: "agents/jae-diagram-creator/run.sh"
+    description: "Technical diagrams and visualization creation"
+    timeout: 450
+    required_tools:
+      - mermaid_generator
+      - drawio_converter
+      - image_optimizer
+    inputs:
+      - diagram_requirements
+      - architecture_specs
+    outputs:
+      - diagram_files
+      - diagram_source
+
+  # Quality Assurance Agents
+  jae-editor:
+    phase: 2
+    order: 1
+    command: "agents/jae-editor/run.sh"
+    description: "Content editing for clarity and consistency"
+    timeout: 600
+    required_tools:
+      - grammar_checker
+      - style_guide
+      - readability_analyzer
+    inputs:
+      - draft_content
+      - style_guidelines
+    outputs:
+      - edited_content
+      - edit_suggestions
+
+  jae-technical-reviewer:
+    phase: 2
+    order: 2
+    command: "agents/jae-technical-reviewer/run.sh"
+    description: "Technical accuracy and code validation"
+    timeout: 600
+    required_tools:
+      - code_validator
+      - example_runner
+      - reference_checker
+    inputs:
+      - technical_content
+      - code_examples
+    outputs:
+      - review_report
+      - validated_content
+
+  # Publishing Agents
+  jae-formatter:
+    phase: 3
+    order: 1
+    command: "agents/jae-formatter/run.sh"
+    description: "Multi-format book generation (PDF, HTML, EPUB)"
+    timeout: 900
+    required_tools:
+      - pandoc
+      - latex_engine
+      - html_generator
+      - epub_builder
+    inputs:
+      - final_content
+      - format_config
+    outputs:
+      - formatted_book
+      - format_metadata
+
+  jae-indexer:
+    phase: 3
+    order: 2
+    command: "agents/jae-indexer/run.sh"
+    description: "Index, TOC, and cross-reference generation"
+    timeout: 300
+    required_tools:
+      - index_generator
+      - toc_builder
+      - link_validator
+    inputs:
+      - book_content
+      - chapter_structure
+    outputs:
+      - index_data
+      - navigation_structure
+
+  jae-publisher:
+    phase: 3
+    order: 3
+    command: "agents/jae-publisher/run.sh"
+    description: "Book deployment and distribution"
+    timeout: 600
+    required_tools:
+      - github_pages
+      - release_manager
+      - metadata_updater
+    inputs:
+      - formatted_books
+      - deployment_config
+    outputs:
+      - deployment_urls
+      - release_notes
+
+# Book Workflows
+workflows:
+  content-creation:
+    name: "Content Creation Pipeline"
+    description: "Create multilingual technical content"
+    agents:
+      - jae-content-writer
+      - jae-translator
+      - jae-diagram-creator
+    
+  quality-assurance:
+    name: "Book Quality Assurance"
+    description: "Edit and review technical content"
+    agents:
+      - jae-editor
+      - jae-technical-reviewer
+    
+  publishing-pipeline:
+    name: "Publishing Pipeline"
+    description: "Format and publish book in multiple formats"
+    agents:
+      - jae-formatter
+      - jae-indexer
+      - jae-publisher
+    
+  full-book-production:
+    name: "Complete Book Production"
+    description: "End-to-end book creation and publishing"
+    agents:
+      - jae-content-writer
+      - jae-translator
+      - jae-diagram-creator
+      - jae-editor
+      - jae-technical-reviewer
+      - jae-formatter
+      - jae-indexer
+      - jae-publisher

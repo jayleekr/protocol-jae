@@ -4,7 +4,7 @@ _Last updated: 2025-07-27_
 ## State
 Phase: VALIDATE  
 Status: COMPLETED  
-CurrentItem: JAE Commands 기반 워크플로우 통합 시스템 구현 완료  
+CurrentItem: JAE 마스터링 북 영문판 전체 완성 및 부분 한국어 번역 완료  
 
 ## Plan
 Phase 1 (완료):
@@ -100,6 +100,10 @@ User request → restore/show blueprint.
 - 2025-07-27: Polish Specialist & Code Reviewer 에이전트 구현 및 테스트 완료
 - 2025-07-27: Quality Trio 워크플로우 통합 테스트 성공
 - 2025-07-27: JAE Commands 사용법 가이드 문서 작성 완료
+- 2025-07-27: JAE 마스터링 북 한국어 번역 시작 - 서문(00-preface.md) 번역 완료
+- 2025-07-27: JAE 마스터링 북 아키텍처 장(02-architecture.md) 한국어 번역 완료
+- 2025-07-27: JAE 마스터링 북 영문판 전체 완성 (14개 장: 00-preface ~ 12-future-prospects, 99-conclusion)
+- 2025-07-27: JAE 마스터링 북 한국어 번역 진행 (01-introduction, 03-setup 완료)
 
 ## Workflow History
 <!-- commit SHA & msg -->
