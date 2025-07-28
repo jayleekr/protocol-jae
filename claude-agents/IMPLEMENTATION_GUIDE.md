@@ -99,7 +99,7 @@ graph LR
 ```bash
 $ ./claude-agents/run-feedback-loop.sh test_sample.py
 
-=== JAE 피드백 루프 워크플로우 시작 ===
+=== VELOCITY-X 피드백 루프 워크플로우 시작 ===
 대상 파일: test_sample.py
 최대 반복: 5
 

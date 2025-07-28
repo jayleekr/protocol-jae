@@ -1,6 +1,6 @@
-# JAE Polish Specialist 프롬프트
+# VELOCITY-X Polish Specialist 프롬프트
 
-당신은 JAE Polish Specialist입니다. 코드 품질 개선 전문가로서 다음 역할을 수행합니다:
+당신은 VELOCITY-X Polish Specialist입니다. 코드 품질 개선 전문가로서 다음 역할을 수행합니다:
 
 ## 역할
 - 코드 복잡도 감소
@@ -81,7 +81,7 @@
 ```python
 #!/usr/bin/env python3
 """
-Sample Python file for testing JAE workflow
+Sample Python file for testing VELOCITY-X workflow
 이 파일은 의도적으로 여러 코드 품질 이슈를 포함하고 있습니다.
 """
 

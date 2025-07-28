@@ -1,5 +1,5 @@
 #!/bin/bash
-# JAE Workflow Runner
+# VELOCITY-X Workflow Runner
 # 지정된 워크플로우를 실행하는 편리한 스크립트
 
 set -euo pipefail
@@ -17,7 +17,7 @@ usage() {
     cat << EOF
 Usage: $0 [OPTIONS] [input_files...]
 
-JAE Workflow Runner - Execute JAE agent workflows
+VELOCITY-X Workflow Runner - Execute VELOCITY-X agent workflows
 
 OPTIONS:
     -h, --help              Show this help message
@@ -43,7 +43,7 @@ EOF
 
 # 사용 가능한 워크플로우 목록 출력
 list_workflows() {
-    local config_file="$JAE_CONFIG_DIR/agents.yaml"
+    local config_file="$VELOCITY-X_CONFIG_DIR/agents.yaml"
     
     if [[ ! -f "$config_file" ]]; then
         error_exit "Configuration file not found: $config_file"
@@ -79,9 +79,9 @@ show_execution_plan() {
     echo "This would execute the following command:"
     echo "python3 '$WORKFLOW_ENGINE' '$workflow' ${input_files[*]}"
     echo ""
-    echo "Configuration directory: $JAE_CONFIG_DIR"
-    echo "Output directory: $JAE_OUTPUT_DIR"
-    echo "Temp directory: $JAE_TEMP_DIR"
+    echo "Configuration directory: $VELOCITY-X_CONFIG_DIR"
+    echo "Output directory: $VELOCITY-X_OUTPUT_DIR"
+    echo "Temp directory: $VELOCITY-X_TEMP_DIR"
 }
 
 # 워크플로우 실행
@@ -91,7 +91,7 @@ run_workflow() {
     shift 2
     local input_files=("$@")
     
-    log_info "Starting JAE workflow: $workflow"
+    log_info "Starting VELOCITY-X workflow: $workflow"
     
     # 워크플로우 엔진 실행
     local cmd=(python3 "$WORKFLOW_ENGINE" "$workflow")
@@ -100,8 +100,8 @@ run_workflow() {
         cmd+=(--verbose)
     fi
     
-    if [[ -n "$JAE_CONFIG_DIR" ]]; then
-        cmd+=(--config-dir "$JAE_CONFIG_DIR")
+    if [[ -n "$VELOCITY-X_CONFIG_DIR" ]]; then
+        cmd+=(--config-dir "$VELOCITY-X_CONFIG_DIR")
     fi
     
     # 입력 파일 추가
@@ -123,7 +123,7 @@ run_workflow() {
         echo ""
         echo "🎉 Workflow completed successfully!"
         echo "⏱️  Duration: ${duration} seconds"
-        echo "📁 Output directory: $JAE_OUTPUT_DIR"
+        echo "📁 Output directory: $VELOCITY-X_OUTPUT_DIR"
         echo ""
         echo "Next steps:"
         echo "  - Check the output directory for results"
@@ -140,7 +140,7 @@ run_workflow() {
         echo ""
         echo "❌ Workflow failed!"
         echo "⏱️  Duration: ${duration} seconds"
-        echo "📁 Check logs in: $JAE_OUTPUT_DIR"
+        echo "📁 Check logs in: $VELOCITY-X_OUTPUT_DIR"
         echo ""
         echo "Troubleshooting:"
         echo "  - Check agent logs for specific errors"
@@ -166,21 +166,21 @@ validate_environment() {
     fi
     
     # 설정 디렉토리 확인
-    if [[ ! -d "$JAE_CONFIG_DIR" ]]; then
-        error_exit "Configuration directory not found: $JAE_CONFIG_DIR"
+    if [[ ! -d "$VELOCITY-X_CONFIG_DIR" ]]; then
+        error_exit "Configuration directory not found: $VELOCITY-X_CONFIG_DIR"
     fi
     
     # 필수 설정 파일 확인
     local required_files=("agents.yaml" "tools.yaml")
     for file in "${required_files[@]}"; do
-        if [[ ! -f "$JAE_CONFIG_DIR/$file" ]]; then
-            error_exit "Required configuration file not found: $JAE_CONFIG_DIR/$file"
+        if [[ ! -f "$VELOCITY-X_CONFIG_DIR/$file" ]]; then
+            error_exit "Required configuration file not found: $VELOCITY-X_CONFIG_DIR/$file"
         fi
     done
     
     # 출력 디렉토리 생성
-    ensure_dir "$JAE_OUTPUT_DIR"
-    ensure_dir "$JAE_TEMP_DIR"
+    ensure_dir "$VELOCITY-X_OUTPUT_DIR"
+    ensure_dir "$VELOCITY-X_TEMP_DIR"
     
     log_debug "Environment validation completed"
 }
@@ -202,7 +202,7 @@ main() {
                 ;;
             -v|--verbose)
                 verbose=true
-                export JAE_LOG_LEVEL=$LOG_DEBUG
+                export VELOCITY-X_LOG_LEVEL=$LOG_DEBUG
                 shift
                 ;;
             -w|--workflow)
@@ -214,7 +214,7 @@ main() {
                 shift
                 ;;
             --config-dir)
-                export JAE_CONFIG_DIR="$2"
+                export VELOCITY-X_CONFIG_DIR="$2"
                 shift 2
                 ;;
             --dry-run)

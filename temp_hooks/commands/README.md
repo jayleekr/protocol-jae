@@ -1,6 +1,6 @@
-# JAE Commands Directory
+# VELOCITY-X Commands Directory
 
-이 디렉토리는 JAE 에이전트들의 자동 호출 및 전문화된 도구 통합을 위한 command 스크립트들을 포함합니다.
+이 디렉토리는 VELOCITY-X 에이전트들의 자동 호출 및 전문화된 도구 통합을 위한 command 스크립트들을 포함합니다.
 
 ## 디렉토리 구조
 
@@ -17,15 +17,15 @@ temp_hooks/commands/
 │   ├── workflow_engine.py      # 워크플로우 엔진
 │   └── hook_system.py          # Hook 시스템
 ├── agents/                     # 에이전트별 명령어
-│   ├── jae-vibe-specialist/    # BDD/아이디어 구체화
-│   ├── jae-flow-specialist/    # PR/TDD 워크플로우
-│   ├── jae-polish-specialist/  # 코드 품질 개선
-│   ├── jae-security-guardian/  # 보안 규정 준수
-│   ├── jae-code-reviewer/      # 코드 리뷰
-│   ├── jae-test-engineer/      # 테스트 자동화
-│   ├── jae-ui-architect/       # UI 컴포넌트
-│   ├── jae-performance-optimizer/ # 성능 최적화
-│   └── jae-documentation-scribe/  # 문서화
+│   ├── velocity-x-vibe-specialist/    # BDD/아이디어 구체화
+│   ├── velocity-x-flow-specialist/    # PR/TDD 워크플로우
+│   ├── velocity-x-polish-specialist/  # 코드 품질 개선
+│   ├── velocity-x-security-guardian/  # 보안 규정 준수
+│   ├── velocity-x-code-reviewer/      # 코드 리뷰
+│   ├── velocity-x-test-engineer/      # 테스트 자동화
+│   ├── velocity-x-ui-architect/       # UI 컴포넌트
+│   ├── velocity-x-performance-optimizer/ # 성능 최적화
+│   └── velocity-x-documentation-scribe/  # 문서화
 ├── tools/                      # 전문화된 도구들
 │   ├── git/                    # Git 관련 도구
 │   ├── analysis/               # 코드 분석 도구
@@ -58,7 +58,7 @@ temp_hooks/commands/
 ./temp_hooks/commands/scripts/run-workflow.sh --type=quality-trio
 
 # 특정 에이전트 실행
-./temp_hooks/commands/agents/jae-polish-specialist/run.sh --file=src/example.py
+./temp_hooks/commands/agents/velocity-x-polish-specialist/run.sh --file=src/example.py
 
 # 전체 워크플로우 실행
 ./temp_hooks/commands/scripts/run-full-workflow.sh

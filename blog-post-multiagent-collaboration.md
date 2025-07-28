@@ -1,12 +1,12 @@
-# AI 에이전트들을 어떻게 함께 일하게 할 것인가: JAE 프로젝트의 고민
+# AI 에이전트들을 어떻게 함께 일하게 할 것인가: VELOCITY-X 프로젝트의 고민
 
-> 14개의 전문 AI 에이전트가 하나의 목표를 위해 협업한다면? 멀티 에이전트 시스템의 설계에서 협업과 성과 측정까지, JAE 프로젝트에서 고민하고 실험한 이야기.
+> 14개의 전문 AI 에이전트가 하나의 목표를 위해 협업한다면? 멀티 에이전트 시스템의 설계에서 협업과 성과 측정까지, VELOCITY-X 프로젝트에서 고민하고 실험한 이야기.
 
 ## 들어가며: 혼자가 아닌 함께
 
 인간 조직에서 팀워크가 중요하듯, AI 에이전트들도 혼자보다는 함께 일할 때 더 강력해집니다. 하지만 에이전트들을 어떻게 조직하고, 어떤 순서로 일하게 하며, 그 성과를 어떻게 측정할지는 전혀 다른 차원의 문제입니다.
 
-JAE(Just Another Engineer) 프로젝트를 시작할 때, 저는 단순한 질문 하나에서 출발했습니다:
+VELOCITY-X(Just Another Engineer) 프로젝트를 시작할 때, 저는 단순한 질문 하나에서 출발했습니다:
 
 **"개발 워크플로우의 모든 영역을 각각의 전문 에이전트가 담당한다면, 이들을 어떻게 조율해야 할까?"**
 
@@ -38,26 +38,26 @@ print(result.suggestions)
 
 ```yaml
 Phase 1 - 핵심 워크플로우:
-  - jae-vibe-specialist: BDD/아이디어 구체화
-  - jae-flow-specialist: PR/TDD 워크플로우 최적화  
-  - jae-polish-specialist: 코드 품질 개선
+  - velocity-x-vibe-specialist: BDD/아이디어 구체화
+  - velocity-x-flow-specialist: PR/TDD 워크플로우 최적화  
+  - velocity-x-polish-specialist: 코드 품질 개선
 
 Phase 2 - 품질 및 보안:
-  - jae-security-guardian: 보안 규정 준수
-  - jae-code-reviewer: 코드 리뷰 및 표준
-  - jae-test-engineer: 테스트 자동화
+  - velocity-x-security-guardian: 보안 규정 준수
+  - velocity-x-code-reviewer: 코드 리뷰 및 표준
+  - velocity-x-test-engineer: 테스트 자동화
 
 Phase 3 - 도메인 특화:
-  - jae-ui-architect: UI 컴포넌트 설계
-  - jae-performance-optimizer: 성능 분석
-  - jae-documentation-scribe: 기술 문서화
+  - velocity-x-ui-architect: UI 컴포넌트 설계
+  - velocity-x-performance-optimizer: 성능 분석
+  - velocity-x-documentation-scribe: 기술 문서화
 
 Phase 4 - 분석 및 인텔리전스:
-  - jae-repo-analyzer: GitHub 저장소 분석
-  - jae-code-metrics-collector: 코드 정량화
-  - jae-project-health-evaluator: 프로젝트 건강도
-  - jae-improvement-strategist: 발전 전략
-  - jae-repo-insights-orchestrator: 인사이트 통합
+  - velocity-x-repo-analyzer: GitHub 저장소 분석
+  - velocity-x-code-metrics-collector: 코드 정량화
+  - velocity-x-project-health-evaluator: 프로젝트 건강도
+  - velocity-x-improvement-strategist: 발전 전략
+  - velocity-x-repo-insights-orchestrator: 인사이트 통합
 ```
 
 14개의 전문가가 탄생했습니다. 하지만 여기서 진짜 문제가 시작되었죠.
@@ -148,9 +148,9 @@ graph TD
 - 예측하기 어려운 흐름
 - 무한 루프 위험
 
-### 2.2 JAE의 선택: 하이브리드 접근
+### 2.2 VELOCITY-X의 선택: 하이브리드 접근
 
-결국 JAE 프로젝트에서는 이 세 가지를 조합한 하이브리드 접근을 선택했습니다.
+결국 VELOCITY-X 프로젝트에서는 이 세 가지를 조합한 하이브리드 접근을 선택했습니다.
 
 ```yaml
 Workflow Design:
@@ -167,7 +167,7 @@ Workflow Design:
 ```json
 {
   "metadata": {
-    "agent": "jae-polish-specialist",
+    "agent": "velocity-x-polish-specialist",
     "version": "1.0",
     "timestamp": "2025-07-27T12:34:56Z",
     "input_source": "user_code.py"
@@ -192,7 +192,7 @@ Workflow Design:
     "confidence": 0.85,
     "requires_human_review": false
   },
-  "next_agents": ["jae-code-reviewer", "jae-test-engineer"],
+  "next_agents": ["velocity-x-code-reviewer", "velocity-x-test-engineer"],
   "termination_criteria": {
     "complexity_threshold": 10,
     "max_iterations": 5,
@@ -220,19 +220,19 @@ Workflow Design:
 
 ### 3.2 다층적 메트릭 설계
 
-JAE에서는 3개 층위의 메트릭을 설계했습니다.
+VELOCITY-X에서는 3개 층위의 메트릭을 설계했습니다.
 
 #### Layer 1: 개별 에이전트 메트릭
 ```json
 {
   "agent_metrics": {
-    "jae-polish-specialist": {
+    "velocity-x-polish-specialist": {
       "complexity_improvement": 3,  // 15 → 12
       "code_smells_removed": 5,
       "processing_time": "12s",
       "confidence_score": 0.85
     },
-    "jae-security-guardian": {
+    "velocity-x-security-guardian": {
       "vulnerabilities_found": 2,
       "false_positives": 0,
       "severity_distribution": {"high": 0, "medium": 1, "low": 1}
@@ -249,7 +249,7 @@ JAE에서는 3개 층위의 메트릭을 설계했습니다.
     "agent_handoff_count": 8,
     "iteration_count": 3,
     "parallel_efficiency": 0.78,  // 이론적 최적 대비
-    "bottleneck_agent": "jae-test-engineer",
+    "bottleneck_agent": "velocity-x-test-engineer",
     "idle_time_ratio": 0.15
   }
 }
@@ -478,7 +478,7 @@ Python으로 CrewAI 프레임워크를 사용해 에이전트를 구현하는 �
 
 #### 에이전트 프롬프트 템플릿
 ```markdown
-# JAE Polish Specialist
+# VELOCITY-X Polish Specialist
 
 당신은 코드 품질 개선 전문가입니다.
 
@@ -768,9 +768,9 @@ AI 에이전트들이 진정으로 협업하는 세상은 이미 시작되었습
 
 ---
 
-*JAE 프로젝트는 현재도 진행 중입니다. 최신 소식과 코드는 [GitHub 저장소](https://github.com/jayleekr/protocol-jae)에서 확인하실 수 있습니다.*
+*VELOCITY-X 프로젝트는 현재도 진행 중입니다. 최신 소식과 코드는 [GitHub 저장소](https://github.com/jayleekr/protocol-jae)에서 확인하실 수 있습니다.*
 
 **관련 링크:**
-- [JAE 프로젝트 문서](./jae-integrated-workflow.md)
+- [VELOCITY-X 프로젝트 문서](./velocity-x-integrated-workflow.md)
 - [구현 가이드](./claude-agents/IMPLEMENTATION_GUIDE.md)
 - [피드백 루프 워크플로우](./claude-agents/workflows/feedback-loop-workflow.md)

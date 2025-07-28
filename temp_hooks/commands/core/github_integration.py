@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 GitHub API 통합 및 공통 라이브러리
-JAE GitHub 분석 에이전트들의 공통 기능 제공
+VELOCITY-X GitHub 분석 에이전트들의 공통 기능 제공
 """
 
 import os
@@ -34,7 +34,7 @@ class GitHubAPIClient:
         self.session.headers.update({
             'Authorization': f'token {config.token}',
             'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'JAE-GitHub-Analyzer/1.0'
+            'User-Agent': 'VELOCITY-X-GitHub-Analyzer/1.0'
         })
         
     def get_rate_limit_status(self) -> Dict[str, Any]:

@@ -1,10 +1,10 @@
 # Book Creation Sub-agents Configuration
 agents:
   # Content Creation Agents
-  jae-content-writer:
+  velocity-x-content-writer:
     phase: 1
     order: 1
-    command: "agents/jae-content-writer/run.sh"
+    command: "agents/velocity-x-content-writer/run.sh"
     description: "Technical content writing and markdown generation"
     timeout: 600
     required_tools:
@@ -18,10 +18,10 @@ agents:
       - draft_content
       - metadata
 
-  jae-translator:
+  velocity-x-translator:
     phase: 1
     order: 2
-    command: "agents/jae-translator/run.sh"
+    command: "agents/velocity-x-translator/run.sh"
     description: "Multilingual translation specialist (En <-> Ko)"
     timeout: 900
     required_tools:
@@ -36,10 +36,10 @@ agents:
       - translated_content
       - translation_notes
 
-  jae-diagram-creator:
+  velocity-x-diagram-creator:
     phase: 1
     order: 3
-    command: "agents/jae-diagram-creator/run.sh"
+    command: "agents/velocity-x-diagram-creator/run.sh"
     description: "Technical diagrams and visualization creation"
     timeout: 450
     required_tools:
@@ -54,10 +54,10 @@ agents:
       - diagram_source
 
   # Quality Assurance Agents
-  jae-editor:
+  velocity-x-editor:
     phase: 2
     order: 1
-    command: "agents/jae-editor/run.sh"
+    command: "agents/velocity-x-editor/run.sh"
     description: "Content editing for clarity and consistency"
     timeout: 600
     required_tools:
@@ -71,10 +71,10 @@ agents:
       - edited_content
       - edit_suggestions
 
-  jae-technical-reviewer:
+  velocity-x-technical-reviewer:
     phase: 2
     order: 2
-    command: "agents/jae-technical-reviewer/run.sh"
+    command: "agents/velocity-x-technical-reviewer/run.sh"
     description: "Technical accuracy and code validation"
     timeout: 600
     required_tools:
@@ -89,10 +89,10 @@ agents:
       - validated_content
 
   # Publishing Agents
-  jae-formatter:
+  velocity-x-formatter:
     phase: 3
     order: 1
-    command: "agents/jae-formatter/run.sh"
+    command: "agents/velocity-x-formatter/run.sh"
     description: "Multi-format book generation (PDF, HTML, EPUB)"
     timeout: 900
     required_tools:
@@ -107,10 +107,10 @@ agents:
       - formatted_book
       - format_metadata
 
-  jae-indexer:
+  velocity-x-indexer:
     phase: 3
     order: 2
-    command: "agents/jae-indexer/run.sh"
+    command: "agents/velocity-x-indexer/run.sh"
     description: "Index, TOC, and cross-reference generation"
     timeout: 300
     required_tools:
@@ -124,10 +124,10 @@ agents:
       - index_data
       - navigation_structure
 
-  jae-publisher:
+  velocity-x-publisher:
     phase: 3
     order: 3
-    command: "agents/jae-publisher/run.sh"
+    command: "agents/velocity-x-publisher/run.sh"
     description: "Book deployment and distribution"
     timeout: 600
     required_tools:
@@ -147,34 +147,34 @@ workflows:
     name: "Content Creation Pipeline"
     description: "Create multilingual technical content"
     agents:
-      - jae-content-writer
-      - jae-translator
-      - jae-diagram-creator
+      - velocity-x-content-writer
+      - velocity-x-translator
+      - velocity-x-diagram-creator
     
   quality-assurance:
     name: "Book Quality Assurance"
     description: "Edit and review technical content"
     agents:
-      - jae-editor
-      - jae-technical-reviewer
+      - velocity-x-editor
+      - velocity-x-technical-reviewer
     
   publishing-pipeline:
     name: "Publishing Pipeline"
     description: "Format and publish book in multiple formats"
     agents:
-      - jae-formatter
-      - jae-indexer
-      - jae-publisher
+      - velocity-x-formatter
+      - velocity-x-indexer
+      - velocity-x-publisher
     
   full-book-production:
     name: "Complete Book Production"
     description: "End-to-end book creation and publishing"
     agents:
-      - jae-content-writer
-      - jae-translator
-      - jae-diagram-creator
-      - jae-editor
-      - jae-technical-reviewer
-      - jae-formatter
-      - jae-indexer
-      - jae-publisher
+      - velocity-x-content-writer
+      - velocity-x-translator
+      - velocity-x-diagram-creator
+      - velocity-x-editor
+      - velocity-x-technical-reviewer
+      - velocity-x-formatter
+      - velocity-x-indexer
+      - velocity-x-publisher

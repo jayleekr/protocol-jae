@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# JAE Claude Code 기반 피드백 루프 실행 스크립트
+# VELOCITY-X Claude Code 기반 피드백 루프 실행 스크립트
 
 set -e
 
@@ -21,7 +21,7 @@ NC='\033[0m'
 mkdir -p "$WORK_DIR" "$RESULTS_DIR"
 cp "$TARGET_FILE" "$WORK_DIR/current_code.py"
 
-echo -e "${BLUE}=== JAE 피드백 루프 워크플로우 시작 ===${NC}"
+echo -e "${BLUE}=== VELOCITY-X 피드백 루프 워크플로우 시작 ===${NC}"
 echo -e "대상 파일: $TARGET_FILE"
 echo -e "최대 반복: $MAX_ITERATIONS"
 echo ""

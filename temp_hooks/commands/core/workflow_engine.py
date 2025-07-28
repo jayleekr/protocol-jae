@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-JAE Workflow Engine
+VELOCITY-X Workflow Engine
 워크플로우 자동 호출 및 에이전트 간 조율을 담당하는 핵심 엔진
 """
 
@@ -62,13 +62,13 @@ class AgentResult:
     metadata: Optional[Dict[str, Any]]
 
 class WorkflowEngine:
-    """JAE 워크플로우 엔진 - 에이전트들의 자동 호출 및 조율"""
+    """VELOCITY-X 워크플로우 엔진 - 에이전트들의 자동 호출 및 조율"""
     
     def __init__(self, config_dir: Optional[str] = None):
-        self.config_dir = Path(config_dir or os.getenv('JAE_CONFIG_DIR', './config'))
-        self.commands_dir = Path(os.getenv('JAE_COMMANDS_DIR', '.'))
-        self.output_dir = Path(os.getenv('JAE_OUTPUT_DIR', './jae-output'))
-        self.temp_dir = Path(os.getenv('JAE_TEMP_DIR', '/tmp/jae-workflow'))
+        self.config_dir = Path(config_dir or os.getenv('VELOCITY-X_CONFIG_DIR', './config'))
+        self.commands_dir = Path(os.getenv('VELOCITY-X_COMMANDS_DIR', '.'))
+        self.output_dir = Path(os.getenv('VELOCITY-X_OUTPUT_DIR', './velocity-x-output'))
+        self.temp_dir = Path(os.getenv('VELOCITY-X_TEMP_DIR', '/tmp/velocity-x-workflow'))
         
         # 설정 로드
         self.agents_config = self._load_agents_config()
@@ -243,10 +243,10 @@ class WorkflowEngine:
         # 환경 변수 설정
         env = os.environ.copy()
         env.update({
-            'JAE_WORKFLOW_ID': self.workflow_id,
-            'JAE_AGENT_NAME': agent_name,
-            'JAE_OUTPUT_DIR': str(self.output_dir),
-            'JAE_TEMP_DIR': str(self.temp_dir)
+            'VELOCITY-X_WORKFLOW_ID': self.workflow_id,
+            'VELOCITY-X_AGENT_NAME': agent_name,
+            'VELOCITY-X_OUTPUT_DIR': str(self.output_dir),
+            'VELOCITY-X_TEMP_DIR': str(self.temp_dir)
         })
         
         try:
@@ -439,7 +439,7 @@ class WorkflowEngine:
                     if result.status == AgentStatus.FAILED:
                         logger.error(f"Agent {agent_name} failed, checking if workflow should continue")
                         # 중요한 에이전트 실패 시 중단
-                        if agent_name in ['jae-security-guardian']:
+                        if agent_name in ['velocity-x-security-guardian']:
                             logger.error("Critical agent failed, stopping workflow")
                             break
                 else:
@@ -538,7 +538,7 @@ def main():
     """CLI 인터페이스"""
     import argparse
     
-    parser = argparse.ArgumentParser(description='JAE Workflow Engine')
+    parser = argparse.ArgumentParser(description='VELOCITY-X Workflow Engine')
     parser.add_argument('workflow', help='Workflow name to run')
     parser.add_argument('files', nargs='*', help='Input files')
     parser.add_argument('--config-dir', help='Configuration directory')

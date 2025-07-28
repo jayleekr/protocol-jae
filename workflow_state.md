@@ -4,7 +4,7 @@ _Last updated: 2025-07-27_
 ## State
 Phase: CONSTRUCT  
 Status: RUNNING  
-CurrentItem: JAE 2.0 기능 중심 아키텍처 전환 - Phase 1 진행중  
+CurrentItem: VELOCITY-X 2.0 기능 중심 아키텍처 전환 - Phase 1 진행중  
 
 ## Plan
 Phase 1 (완료):
@@ -13,16 +13,16 @@ Phase 1 (완료):
 3. ✅ Quality Trio 에이전트 구현 (polish, review, test)
 
 Phase 2 (완료):
-4. ✅ JAE 에이전트 역할 정의 문서화
-   - jae-vibe-specialist (BDD/아이디어 구체화)
-   - jae-flow-specialist (PR/TDD 워크플로우)
-   - jae-polish-specialist (코드 품질 개선)
-   - jae-security-guardian (보안 규정 준수)
-   - jae-code-reviewer (코드 리뷰)
-   - jae-test-engineer (테스트 자동화)
-   - jae-ui-architect (UI 컴포넌트)
-   - jae-performance-optimizer (성능 최적화)
-   - jae-documentation-scribe (문서화)
+4. ✅ VELOCITY-X 에이전트 역할 정의 문서화
+   - velocity-x-vibe-specialist (BDD/아이디어 구체화)
+   - velocity-x-flow-specialist (PR/TDD 워크플로우)
+   - velocity-x-polish-specialist (코드 품질 개선)
+   - velocity-x-security-guardian (보안 규정 준수)
+   - velocity-x-code-reviewer (코드 리뷰)
+   - velocity-x-test-engineer (테스트 자동화)
+   - velocity-x-ui-architect (UI 컴포넌트)
+   - velocity-x-performance-optimizer (성능 최적화)
+   - velocity-x-documentation-scribe (문서화)
 
 5. ✅ 통합 워크플로우 문서 작성
    - 9개 에이전트 간 유기적 협업 체계
@@ -31,7 +31,7 @@ Phase 2 (완료):
 
 Phase 3 (완료):
 6. ✅ temp_hooks/commands/ 기반 워크플로우 시스템 구현
-   - 에이전트별 command 스크립트 (jae-polish-specialist, jae-code-reviewer)
+   - 에이전트별 command 스크립트 (velocity-x-polish-specialist, velocity-x-code-reviewer)
    - 워크플로우 자동 호출 메커니즘 (run-quality-trio.sh)
    - 전문화된 도구 통합 (ruff, pylint, black, radon)
    - 데이터 핸드오프 메커니즘 (output 디렉토리 기반)
@@ -39,35 +39,35 @@ Phase 3 (완료):
    - 사용법 문서 (USAGE_GUIDE.md) 작성 완료
 
 Phase 4 (완료):
-7. ✅ JAE 마스터링 북 서브에이전트 개발 완료
-8. ✅ JAE 마스터링 북 번역 워크플로우 완성
+7. ✅ VELOCITY-X 마스터링 북 서브에이전트 개발 완료
+8. ✅ VELOCITY-X 마스터링 북 번역 워크플로우 완성
 9. ✅ GitHub 분석 시스템 통합 완료
 10. ✅ Claude Code 기반 피드백 루프 워크플로우 구현
 
-JAE 2.0 기능 중심 아키텍처 전환 (진행중):
+VELOCITY-X 2.0 기능 중심 아키텍처 전환 (진행중):
 Phase 1: 기능 카테고리 재구성 (2주) - 진행중
 11. ✅ Requirements & Analysis 카테고리 (4개 에이전트)
-    - jae-requirements-analyst: 비즈니스 요구사항 분석 전문가 (신규)
-    - jae-vibe-specialist: BDD 시나리오 생성 전문가 (기존)
-    - jae-business-process-analyst: 비즈니스 프로세스 분석 전문가 (신규)
-    - jae-requirements-validator: 요구사항 품질 검증 전문가 (신규)
+    - velocity-x-requirements-analyst: 비즈니스 요구사항 분석 전문가 (신규)
+    - velocity-x-vibe-specialist: BDD 시나리오 생성 전문가 (기존)
+    - velocity-x-business-process-analyst: 비즈니스 프로세스 분석 전문가 (신규)
+    - velocity-x-requirements-validator: 요구사항 품질 검증 전문가 (신규)
 
 12. ✅ Design & Architecture 카테고리 (5개 에이전트)
-    - jae-system-architect: 전체 시스템 아키텍처 설계 전문가 (신규)
-    - jae-data-architect: 데이터 모델링 및 DB 아키텍처 전문가 (신규)
-    - jae-ui-architect: UI/UX 설계 전문가 (기존)
-    - jae-security-architect: 보안 아키텍처 전문가 (기존 보강)
-    - jae-design-reviewer: 아키텍처 설계 리뷰 전문가 (신규)
+    - velocity-x-system-architect: 전체 시스템 아키텍처 설계 전문가 (신규)
+    - velocity-x-data-architect: 데이터 모델링 및 DB 아키텍처 전문가 (신규)
+    - velocity-x-ui-architect: UI/UX 설계 전문가 (기존)
+    - velocity-x-security-architect: 보안 아키텍처 전문가 (기존 보강)
+    - velocity-x-design-reviewer: 아키텍처 설계 리뷰 전문가 (신규)
 
 13. 🔄 Implementation & Development 카테고리 (8개 에이전트) - 진행중
-    - 기존 유지: jae-flow-specialist, jae-polish-specialist, jae-code-reviewer, jae-test-engineer, jae-performance-optimizer
-    - jae-api-designer: RESTful API 설계 전문가 (신규 완료)
-    - jae-dependency-manager: 패키지 의존성 관리 전문가 (신규 예정)
-    - jae-cicd-builder: CI/CD 파이프라인 전문가 (신규 예정)
+    - 기존 유지: velocity-x-flow-specialist, velocity-x-polish-specialist, velocity-x-code-reviewer, velocity-x-test-engineer, velocity-x-performance-optimizer
+    - velocity-x-api-designer: RESTful API 설계 전문가 (신규 완료)
+    - velocity-x-dependency-manager: 패키지 의존성 관리 전문가 (신규 예정)
+    - velocity-x-cicd-builder: CI/CD 파이프라인 전문가 (신규 예정)
 
 Phase 2-4 (향후 7주):
 14. 카테고리별 실행 시스템 확장 (temp_hooks/commands)
-15. JAE 마스터링 북 업데이트 (새로운 아키텍처 반영)
+15. VELOCITY-X 마스터링 북 업데이트 (새로운 아키텍처 반영)
 16. 전체 시스템 검증 및 최적화
 
 ## Rules
@@ -115,36 +115,36 @@ User request → restore/show blueprint.
 | 4 | 통합 테스트 및 검증 | pending |
 
 ## Log
-- 2025-07-26: 프로젝트 Jae 시작, git 저장소 초기화
+- 2025-07-26: 프로젝트 Velocity-X 시작, git 저장소 초기화
 - 2025-07-26: project_config.md 업데이트 - 목표 및 기술 스택 정의
 - 2025-07-26: ANALYZE 단계로 전환, MVP 구현 계획 수립
 - 2025-07-26: GitHub Actions CI/CD 파이프라인 구성 및 검증 완료
 - 2025-07-26: 프로젝트 구조 설정 완료 (src/, tests/, docs/)
-- 2025-07-27: JAE 9개 에이전트 역할 정의 문서 완성 (agents/*.md)
-- 2025-07-27: JAE 통합 워크플로우 문서 완성 (jae-integrated-workflow.md)
+- 2025-07-27: VELOCITY-X 9개 에이전트 역할 정의 문서 완성 (agents/*.md)
+- 2025-07-27: VELOCITY-X 통합 워크플로우 문서 완성 (velocity-x-integrated-workflow.md)
 - 2025-07-27: Phase 2 완료 - 에이전트 아키텍처 설계 및 문서화 완료
 - 2025-07-27: temp_hooks/commands/ 기반 워크플로우 시스템 구현 완료
 - 2025-07-27: Polish Specialist & Code Reviewer 에이전트 구현 및 테스트 완료
 - 2025-07-27: Quality Trio 워크플로우 통합 테스트 성공
-- 2025-07-27: JAE Commands 사용법 가이드 문서 작성 완료
-- 2025-07-27: JAE 마스터링 북 한국어 번역 시작 - 서문(00-preface.md) 번역 완료
-- 2025-07-27: JAE 마스터링 북 아키텍처 장(02-architecture.md) 한국어 번역 완료
-- 2025-07-27: JAE 마스터링 북 영문판 전체 완성 (14개 장: 00-preface ~ 12-future-prospects, 99-conclusion)
-- 2025-07-27: JAE 마스터링 북 한국어 번역 진행 (01-introduction, 03-setup 완료)
-- 2025-07-27: JAE 마스터링 북 GitHub 업로드 완료 (27개 파일, 16,238줄 추가)
+- 2025-07-27: VELOCITY-X Commands 사용법 가이드 문서 작성 완료
+- 2025-07-27: VELOCITY-X 마스터링 북 한국어 번역 시작 - 서문(00-preface.md) 번역 완료
+- 2025-07-27: VELOCITY-X 마스터링 북 아키텍처 장(02-architecture.md) 한국어 번역 완료
+- 2025-07-27: VELOCITY-X 마스터링 북 영문판 전체 완성 (14개 장: 00-preface ~ 12-future-prospects, 99-conclusion)
+- 2025-07-27: VELOCITY-X 마스터링 북 한국어 번역 진행 (01-introduction, 03-setup 완료)
+- 2025-07-27: VELOCITY-X 마스터링 북 GitHub 업로드 완료 (27개 파일, 16,238줄 추가)
 - 2025-07-27: 번역 워크플로우 이슈 분석 완료
   ⚠️ 문제점 식별: 영문 14개 vs 한국어 4개 챕터 (71.4% 누락)
   📋 원인: 수동 번역 프로세스, 자동화 워크플로우 부재, 번역 완료율 검증 시스템 없음
   🎯 해결방안: 누락 챕터 번역 완료, 자동 번역 파이프라인 구축, 품질 관리 강화
-- 2025-07-27: JAE 마스터링 북 한국어 번역 완료 ✅
+- 2025-07-27: VELOCITY-X 마스터링 북 한국어 번역 완료 ✅
   ✅ 완료: 전체 14개 챕터 번역 완료 (00-preface ~ 99-conclusion)
   📊 번역 완성률: 14/14 챕터 (100% 완료)
-- 2025-07-27: JAE 프로젝트 워크플로우 가설 검증 완료 ✅
+- 2025-07-27: VELOCITY-X 프로젝트 워크플로우 가설 검증 완료 ✅
   ✅ 다중 에이전트 협업 시스템 작동 확인 (Quality Trio: 1초 내 자동화 처리)
   ✅ 3-Phase 아키텍처 설계 검증 완료 (9개 전문가 에이전트)
   ✅ temp_hooks/commands/ 실행 시스템 검증 완료
   📊 검증 결과: 프로덕션 준비된 MVP 아키텍처 확인
-- 2025-07-27: GitHub 분석 시스템 통합 및 JAE 마스터링 북 업데이트 완료 ✅
+- 2025-07-27: GitHub 분석 시스템 통합 및 VELOCITY-X 마스터링 북 업데이트 완료 ✅
   ✅ 5개 새로운 GitHub 분석 에이전트 문서화 완료
   ✅ 새로운 챕터 13: GitHub Analytics and Repository Insights 작성
   ✅ 영문판 및 한국어판 동시 업데이트

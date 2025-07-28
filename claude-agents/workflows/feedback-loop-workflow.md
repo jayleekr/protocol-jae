@@ -68,7 +68,7 @@ feedback_points:
 ### Polish Agent 호출
 ```bash
 # 1차 분석
-claude "당신은 JAE Polish Specialist입니다. 
+claude "당신은 VELOCITY-X Polish Specialist입니다. 
 다음 코드를 분석하고 개선하세요:
 $(cat target_file.py)
 
@@ -89,7 +89,7 @@ $(cat target_file.py)
 ### Review Agent 호출 (피드백 포함)
 ```bash
 # Polish 결과를 받아 검토
-claude "당신은 JAE Code Reviewer입니다.
+claude "당신은 VELOCITY-X Code Reviewer입니다.
 이전 분석 결과: $(cat polish_output.json)
 
 추가 검토 사항:

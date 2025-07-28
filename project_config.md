@@ -2,7 +2,7 @@
 _Last updated: 2025-07-27_
 
 ## Goal  
-프로젝트 "Jae" - 차세대 개발을 위한 에이전틱 워크플로우 MVP 구축
+프로젝트 "Velocity-X" - 차세대 개발을 위한 에이전틱 워크플로우 MVP 구축
 - 다중 에이전트 협업 프레임워크를 통한 SDLC 자동화
 - 기술 부채 감소 및 코드 품질 향상
 - 해커톤 MVP: "품질 트리오" (polish-specialist, code-reviewer, test-engineer)
@@ -30,41 +30,41 @@ _Last updated: 2025-07-27_
 - 3.5 ch/token, 8 K cap.  
 - Summarize when `workflow_state.md` > 12 K.
 
-## JAE Agent Architecture
+## VELOCITY-X Agent Architecture
 14개 전문화된 에이전트로 구성된 4-Phase 워크플로우:
 
 **Phase 1: 핵심 워크플로우**
-- jae-vibe-specialist: BDD/아이디어 구체화 전문가
-- jae-flow-specialist: PR/TDD 워크플로우 최적화 전문가  
-- jae-polish-specialist: 코드 품질 개선 및 리팩토링 전문가
+- velocity-x-vibe-specialist: BDD/아이디어 구체화 전문가
+- velocity-x-flow-specialist: PR/TDD 워크플로우 최적화 전문가  
+- velocity-x-polish-specialist: 코드 품질 개선 및 리팩토링 전문가
 
 **Phase 2: 품질 및 보안 보증**
-- jae-security-guardian: ISMS-P/보안 규정 준수 전문가
-- jae-code-reviewer: 코드 리뷰 및 표준 준수 전문가
-- jae-test-engineer: 테스트 자동화 및 커버리지 전문가
+- velocity-x-security-guardian: ISMS-P/보안 규정 준수 전문가
+- velocity-x-code-reviewer: 코드 리뷰 및 표준 준수 전문가
+- velocity-x-test-engineer: 테스트 자동화 및 커버리지 전문가
 
 **Phase 3: 도메인 특화**
-- jae-ui-architect: UI 컴포넌트 설계 및 생성 전문가
-- jae-performance-optimizer: 성능 분석 및 최적화 전문가
-- jae-documentation-scribe: 기술 문서 작성 및 관리 전문가
+- velocity-x-ui-architect: UI 컴포넌트 설계 및 생성 전문가
+- velocity-x-performance-optimizer: 성능 분석 및 최적화 전문가
+- velocity-x-documentation-scribe: 기술 문서 작성 및 관리 전문가
 
 **Phase 4: 분석 및 인텔리전스**
-- jae-repo-analyzer: GitHub 저장소 분석 전문가
-- jae-code-metrics-collector: 코드 정량화 분석 전문가
-- jae-project-health-evaluator: 프로젝트 건강도 종합 평가 전문가
-- jae-improvement-strategist: 발전 전략 수립 전문가
-- jae-repo-insights-orchestrator: GitHub 저장소 인사이트 통합 오케스트레이터
+- velocity-x-repo-analyzer: GitHub 저장소 분석 전문가
+- velocity-x-code-metrics-collector: 코드 정량화 분석 전문가
+- velocity-x-project-health-evaluator: 프로젝트 건강도 종합 평가 전문가
+- velocity-x-improvement-strategist: 발전 전략 수립 전문가
+- velocity-x-repo-insights-orchestrator: GitHub 저장소 인사이트 통합 오케스트레이터
 
 ## Deliverables
 - `/agents/`: 9개 에이전트 역할 정의 문서 (markdown) ✅
-- `jae-integrated-workflow.md`: 통합 워크플로우 설계 문서 ✅
+- `velocity-x-integrated-workflow.md`: 통합 워크플로우 설계 문서 ✅
 - `/temp_hooks/commands/`: 워크플로우 통합 시스템 ✅
   - 에이전트별 command 스크립트 (polish-specialist, code-reviewer)
   - 자동 호출 메커니즘 및 데이터 핸드오프
   - 전문화된 도구 통합 (ruff, pylint, black, radon)
 - 통합 테스트 검증 ✅
 - 사용법 가이드 문서 ✅
-- `/jae-book/`: JAE 마스터링 기술서 ✅
+- `/velocity-x-book/`: VELOCITY-X 마스터링 기술서 ✅
   - 영문판: 14개 챕터 완성 (+ 1개 새로운 GitHub 분석 챕터) ✅
   - 한국어판: 14개 챕터 완성 (100%) ✅
   - 서브에이전트: book-content-writer, translator, diagram-creator, formatter ✅
@@ -72,10 +72,10 @@ _Last updated: 2025-07-27_
 
 ## Changelog
 - 2025-07-13: Cleansed out.
-- 2025-07-27: JAE 에이전트 아키텍처 설계 및 문서화 완료
+- 2025-07-27: VELOCITY-X 에이전트 아키텍처 설계 및 문서화 완료
 - 2025-07-27: temp_hooks/commands/ 기반 워크플로우 시스템 구현 완룈
 - 2025-07-27: Polish Specialist & Code Reviewer 에이전트 작동 확인
-- 2025-07-27: JAE 마스터링 북 제작 프로젝트 완료
+- 2025-07-27: VELOCITY-X 마스터링 북 제작 프로젝트 완료
   ✅ 성과: 영문 14개 챕터, 한국어 14개 챕터, 4개 서브에이전트
   ✅ GitHub 분석 시스템: 5개 새로운 에이전트 추가
   ✅ 새로운 챕터 13: GitHub Analytics and Repository Insights

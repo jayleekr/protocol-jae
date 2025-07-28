@@ -4,3 +4,5 @@
 - TODOList 상 하나하나를 마칠때마다 commit 을 만들고 git remote에 업로드해
 - 모든일이 마치면 리뷰와 상관없이 github에 업로드해
 - Date를 넣어야하는때에는 system time을 이용하도록해
+- Action item들은 Github issue를 만들고 진행해줘.
+- 모든 업로드는 Pull request 를 통해서 되어야해.

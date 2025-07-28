@@ -1,5 +1,5 @@
 #!/bin/bash
-# JAE Quality Trio Workflow Runner
+# VELOCITY-X Quality Trio Workflow Runner
 # Polish → Review → Test 순서로 에이전트 실행
 
 set -euo pipefail
@@ -10,14 +10,14 @@ source "$SCRIPT_DIR/../core/common.sh"
 
 # 워크플로우 정보
 readonly WORKFLOW_NAME="quality-trio"
-readonly AGENTS=("jae-polish-specialist" "jae-code-reviewer")  # test-engineer는 아직 구현되지 않음
+readonly AGENTS=("velocity-x-polish-specialist" "velocity-x-code-reviewer")  # test-engineer는 아직 구현되지 않음
 
 # 사용법 출력
 usage() {
     cat << EOF
 Usage: $0 [OPTIONS] <input_file>
 
-JAE Quality Trio Workflow - Polish → Review → Test
+VELOCITY-X Quality Trio Workflow - Polish → Review → Test
 
 OPTIONS:
     -h, --help              Show this help message
@@ -43,7 +43,7 @@ run_quality_trio() {
     
     local workflow_id=$(date '+%Y%m%d_%H%M%S')
     local workflow_start_time=$(date +%s)
-    local workflow_output_dir="$JAE_OUTPUT_DIR/workflow_${workflow_id}"
+    local workflow_output_dir="$VELOCITY-X_OUTPUT_DIR/workflow_${workflow_id}"
     
     ensure_dir "$workflow_output_dir"
     
@@ -100,7 +100,7 @@ EOF
             agent_results+=("success")
             
             # 최신 출력 디렉토리 찾기
-            local latest_output=$(ls -dt "$JAE_OUTPUT_DIR/${agent}_"* 2>/dev/null | head -n1 || echo "")
+            local latest_output=$(ls -dt "$VELOCITY-X_OUTPUT_DIR/${agent}_"* 2>/dev/null | head -n1 || echo "")
             agent_outputs+=("$latest_output")
         else
             local agent_end_time=$(date +%s)
@@ -111,7 +111,7 @@ EOF
             agent_outputs+=("")
             
             # 실패 시 워크플로우 중단 여부 결정
-            if [[ "$agent" == "jae-security-guardian" ]]; then
+            if [[ "$agent" == "velocity-x-security-guardian" ]]; then
                 log_error "Critical security agent failed, stopping workflow"
                 break
             fi
@@ -224,11 +224,11 @@ main() {
                 ;;
             -v|--verbose)
                 verbose=true
-                export JAE_LOG_LEVEL=$LOG_DEBUG
+                export VELOCITY-X_LOG_LEVEL=$LOG_DEBUG
                 shift
                 ;;
             -o|--output)
-                export JAE_OUTPUT_DIR="$2"
+                export VELOCITY-X_OUTPUT_DIR="$2"
                 shift 2
                 ;;
             -*)
@@ -262,7 +262,7 @@ main() {
     check_required_tools "python3" "jq"
     
     # 출력 디렉토리 준비
-    ensure_dir "$JAE_OUTPUT_DIR"
+    ensure_dir "$VELOCITY-X_OUTPUT_DIR"
     
     # 워크플로우 실행
     if run_quality_trio "$input_file" "$verbose"; then

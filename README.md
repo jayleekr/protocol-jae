@@ -1,12 +1,12 @@
-# JAE (Jae Agentic Engine) 🤖
+# VELOCITY-X (Velocity-X Agentic Engine) 🤖
 
 차세대 개발을 위한 에이전틱 워크플로우 시스템
 
-![JAE Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-blue) ![Status](https://img.shields.io/badge/Status-MVP%20Complete-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![VELOCITY-X Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-blue) ![Status](https://img.shields.io/badge/Status-MVP%20Complete-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## 📖 개요
 
-**JAE (Jae Agentic Engine)**는 소프트웨어 개발 생명주기(SDLC)를 자동화하는 다중 에이전트 협업 프레임워크입니다. 9개의 전문화된 AI 에이전트가 유기적으로 협력하여 코드 품질 향상, 보안 강화, 개발 속도 증진을 실현합니다.
+**VELOCITY-X (Velocity-X Agentic Engine)**는 소프트웨어 개발 생명주기(SDLC)를 자동화하는 다중 에이전트 협업 프레임워크입니다. 9개의 전문화된 AI 에이전트가 유기적으로 협력하여 코드 품질 향상, 보안 강화, 개발 속도 증진을 실현합니다.
 
 ### 🎯 핵심 가치
 
@@ -24,22 +24,22 @@ graph TD
     A[Phase 1: 핵심 워크플로우] --> B[Phase 2: 품질 및 보안 보증]
     B --> C[Phase 3: 도메인 특화]
     
-    A --> A1[jae-vibe-specialist<br/>BDD/아이디어 구체화]
-    A --> A2[jae-flow-specialist<br/>PR/TDD 워크플로우]
-    A --> A3[jae-polish-specialist<br/>코드 품질 개선]
+    A --> A1[velocity-x-vibe-specialist<br/>BDD/아이디어 구체화]
+    A --> A2[velocity-x-flow-specialist<br/>PR/TDD 워크플로우]
+    A --> A3[velocity-x-polish-specialist<br/>코드 품질 개선]
     
-    B --> B1[jae-security-guardian<br/>보안 규정 준수]
-    B --> B2[jae-code-reviewer<br/>코드 리뷰]
-    B --> B3[jae-test-engineer<br/>테스트 자동화]
+    B --> B1[velocity-x-security-guardian<br/>보안 규정 준수]
+    B --> B2[velocity-x-code-reviewer<br/>코드 리뷰]
+    B --> B3[velocity-x-test-engineer<br/>테스트 자동화]
     
-    C --> C1[jae-ui-architect<br/>UI 컴포넌트 설계]
-    C --> C2[jae-performance-optimizer<br/>성능 최적화]
-    C --> C3[jae-documentation-scribe<br/>문서 자동화]
+    C --> C1[velocity-x-ui-architect<br/>UI 컴포넌트 설계]
+    C --> C2[velocity-x-performance-optimizer<br/>성능 최적화]
+    C --> C3[velocity-x-documentation-scribe<br/>문서 자동화]
 ```
 
 ### 워크플로우 통합 시스템
 
-JAE는 `temp_hooks/commands/` 기반의 통합 시스템을 통해 각 에이전트의 자동 호출과 전문화된 도구 접근을 제공합니다.
+VELOCITY-X는 `temp_hooks/commands/` 기반의 통합 시스템을 통해 각 에이전트의 자동 호출과 전문화된 도구 접근을 제공합니다.
 
 ```
 temp_hooks/commands/
@@ -48,8 +48,8 @@ temp_hooks/commands/
 │   ├── tools.yaml            # 전문화된 도구 설정  
 │   └── workflow.yaml         # 워크플로우 정의
 ├── agents/                   # 에이전트별 실행 스크립트
-│   ├── jae-polish-specialist/
-│   └── jae-code-reviewer/
+│   ├── velocity-x-polish-specialist/
+│   └── velocity-x-code-reviewer/
 ├── scripts/                  # 워크플로우 오케스트레이션
 │   ├── run-quality-trio.sh   # Quality Trio 워크플로우
 │   └── run-workflow.sh       # 범용 워크플로우 실행기
@@ -86,10 +86,10 @@ chmod +x temp_hooks/commands/scripts/*.sh
 
 ```bash
 # 코드 품질 개선 (Polish Specialist)
-./temp_hooks/commands/agents/jae-polish-specialist/run.sh your_file.py
+./temp_hooks/commands/agents/velocity-x-polish-specialist/run.sh your_file.py
 
 # 코드 리뷰 (Code Reviewer)  
-./temp_hooks/commands/agents/jae-code-reviewer/run.sh your_file.py
+./temp_hooks/commands/agents/velocity-x-code-reviewer/run.sh your_file.py
 ```
 
 ## 🤖 에이전트 소개
@@ -98,25 +98,25 @@ chmod +x temp_hooks/commands/scripts/*.sh
 
 | 에이전트 | 역할 | 상태 |
 |---------|------|------|
-| **jae-vibe-specialist** | BDD/아이디어 구체화 전문가 | 📋 설계 완료 |
-| **jae-flow-specialist** | PR/TDD 워크플로우 최적화 전문가 | 📋 설계 완료 |  
-| **jae-polish-specialist** | 코드 품질 개선 및 리팩토링 전문가 | ✅ 구현 완료 |
+| **velocity-x-vibe-specialist** | BDD/아이디어 구체화 전문가 | 📋 설계 완료 |
+| **velocity-x-flow-specialist** | PR/TDD 워크플로우 최적화 전문가 | 📋 설계 완료 |  
+| **velocity-x-polish-specialist** | 코드 품질 개선 및 리팩토링 전문가 | ✅ 구현 완료 |
 
 ### Phase 2: 품질 및 보안 보증 에이전트
 
 | 에이전트 | 역할 | 상태 |
 |---------|------|------|
-| **jae-security-guardian** | ISMS-P/보안 규정 준수 전문가 | 📋 설계 완료 |
-| **jae-code-reviewer** | 코드 리뷰 및 표준 준수 전문가 | ✅ 구현 완료 |
-| **jae-test-engineer** | 테스트 자동화 및 커버리지 전문가 | 📋 설계 완료 |
+| **velocity-x-security-guardian** | ISMS-P/보안 규정 준수 전문가 | 📋 설계 완료 |
+| **velocity-x-code-reviewer** | 코드 리뷰 및 표준 준수 전문가 | ✅ 구현 완료 |
+| **velocity-x-test-engineer** | 테스트 자동화 및 커버리지 전문가 | 📋 설계 완료 |
 
 ### Phase 3: 도메인 특화 에이전트
 
 | 에이전트 | 역할 | 상태 |
 |---------|------|------|
-| **jae-ui-architect** | UI 컴포넌트 설계 및 생성 전문가 | 📋 설계 완료 |
-| **jae-performance-optimizer** | 성능 분석 및 최적화 전문가 | 📋 설계 완료 |
-| **jae-documentation-scribe** | 기술 문서 작성 및 관리 전문가 | 📋 설계 완료 |
+| **velocity-x-ui-architect** | UI 컴포넌트 설계 및 생성 전문가 | 📋 설계 완료 |
+| **velocity-x-performance-optimizer** | 성능 분석 및 최적화 전문가 | 📋 설계 완료 |
+| **velocity-x-documentation-scribe** | 기술 문서 작성 및 관리 전문가 | 📋 설계 완료 |
 
 ## 📊 실제 성과 예시
 
@@ -144,18 +144,18 @@ chmod +x temp_hooks/commands/scripts/*.sh
 ## 📚 상세 문서
 
 ### 에이전트별 상세 정보
-- [JAE Vibe Specialist](agents/jae-vibe-specialist.md) - BDD/아이디어 구체화
-- [JAE Flow Specialist](agents/jae-flow-specialist.md) - PR/TDD 워크플로우  
-- [JAE Polish Specialist](agents/jae-polish-specialist.md) - 코드 품질 개선
-- [JAE Security Guardian](agents/jae-security-guardian.md) - 보안 규정 준수
-- [JAE Code Reviewer](agents/jae-code-reviewer.md) - 코드 리뷰
-- [JAE Test Engineer](agents/jae-test-engineer.md) - 테스트 자동화
-- [JAE UI Architect](agents/jae-ui-architect.md) - UI 컴포넌트 설계
-- [JAE Performance Optimizer](agents/jae-performance-optimizer.md) - 성능 최적화  
-- [JAE Documentation Scribe](agents/jae-documentation-scribe.md) - 문서 자동화
+- [VELOCITY-X Vibe Specialist](agents/velocity-x-vibe-specialist.md) - BDD/아이디어 구체화
+- [VELOCITY-X Flow Specialist](agents/velocity-x-flow-specialist.md) - PR/TDD 워크플로우  
+- [VELOCITY-X Polish Specialist](agents/velocity-x-polish-specialist.md) - 코드 품질 개선
+- [VELOCITY-X Security Guardian](agents/velocity-x-security-guardian.md) - 보안 규정 준수
+- [VELOCITY-X Code Reviewer](agents/velocity-x-code-reviewer.md) - 코드 리뷰
+- [VELOCITY-X Test Engineer](agents/velocity-x-test-engineer.md) - 테스트 자동화
+- [VELOCITY-X UI Architect](agents/velocity-x-ui-architect.md) - UI 컴포넌트 설계
+- [VELOCITY-X Performance Optimizer](agents/velocity-x-performance-optimizer.md) - 성능 최적화  
+- [VELOCITY-X Documentation Scribe](agents/velocity-x-documentation-scribe.md) - 문서 자동화
 
 ### 워크플로우 및 시스템
-- [JAE 통합 워크플로우](jae-integrated-workflow.md) - 전체 시스템 아키텍처
+- [VELOCITY-X 통합 워크플로우](velocity-x-integrated-workflow.md) - 전체 시스템 아키텍처
 - [사용법 가이드](temp_hooks/commands/docs/USAGE_GUIDE.md) - 상세 사용 방법
 
 ## 🛠️ 기술 스택
@@ -182,13 +182,13 @@ chmod +x temp_hooks/commands/scripts/*.sh
 
 ```bash
 # 개발 중 코드 품질 확인
-./temp_hooks/commands/agents/jae-polish-specialist/run.sh --analyze-only src/feature.py
+./temp_hooks/commands/agents/velocity-x-polish-specialist/run.sh --analyze-only src/feature.py
 
 # 커밋 전 전체 품질 검사
 ./temp_hooks/commands/scripts/run-quality-trio.sh src/feature.py
 
 # PR 생성 전 포맷팅 적용
-./temp_hooks/commands/agents/jae-polish-specialist/run.sh --format-only src/feature.py
+./temp_hooks/commands/agents/velocity-x-polish-specialist/run.sh --format-only src/feature.py
 ```
 
 ## 📈 로드맵
@@ -229,4 +229,4 @@ chmod +x temp_hooks/commands/scripts/*.sh
 - **기능 요청**: [GitHub Discussions](https://github.com/jayleekr/protocol-jae/discussions)
 - **이메일**: jae@example.com
 
-**JAE와 함께 더 스마트한 개발 경험을 시작하세요! 🚀**
+**VELOCITY-X와 함께 더 스마트한 개발 경험을 시작하세요! 🚀**

@@ -5,7 +5,7 @@ tools: Bash, Write, Read, MultiEdit, Glob
 created: 2025-07-27
 ---
 
-You are an expert in digital book production and formatting, specializing in converting technical documentation into multiple professional publishing formats. Your primary role is transforming the JAE mastering book content into polished, reader-friendly formats.
+You are an expert in digital book production and formatting, specializing in converting technical documentation into multiple professional publishing formats. Your primary role is transforming the VELOCITY-X mastering book content into polished, reader-friendly formats.
 
 ## Core Responsibilities
 
@@ -149,14 +149,14 @@ html:
 ```
 docs/
 ├── en/
-│   ├── jae-mastering.pdf
-│   ├── jae-mastering.html
-│   ├── jae-mastering.epub
+│   ├── velocity-x-mastering.pdf
+│   ├── velocity-x-mastering.html
+│   ├── velocity-x-mastering.epub
 │   └── assets/
 └── ko/
-    ├── jae-mastering-ko.pdf
-    ├── jae-mastering-ko.html
-    ├── jae-mastering-ko.epub
+    ├── velocity-x-mastering-ko.pdf
+    ├── velocity-x-mastering-ko.html
+    ├── velocity-x-mastering-ko.epub
     └── assets/
 ```
 

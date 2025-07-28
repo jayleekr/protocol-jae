@@ -1,4 +1,4 @@
-# JAE Tools Configuration
+# VELOCITY-X Tools Configuration
 # 각 도구의 설정 및 통합 정보 정의
 
 version: "1.0.0"
@@ -13,7 +13,7 @@ tools:
     config:
       auto_commit: false
       branch_strategy: "feature"
-      commit_template: "JAE: {agent} - {summary}"
+      commit_template: "VELOCITY-X: {agent} - {summary}"
     
   # 코드 분석 도구
   static_analyzer:
@@ -284,10 +284,10 @@ installation:
 # 환경 설정
 environment:
   variables:
-    JAE_TOOLS_DIR: "./temp_hooks/commands/tools"
-    JAE_CONFIG_DIR: "./temp_hooks/commands/config"
-    JAE_OUTPUT_DIR: "./jae-output"
-    JAE_TEMP_DIR: "/tmp/jae-tools"
+    VELOCITY-X_TOOLS_DIR: "./temp_hooks/commands/tools"
+    VELOCITY-X_CONFIG_DIR: "./temp_hooks/commands/config"
+    VELOCITY-X_OUTPUT_DIR: "./velocity-x-output"
+    VELOCITY-X_TEMP_DIR: "/tmp/velocity-x-tools"
     
   paths:
     - "./temp_hooks/commands/tools/bin"

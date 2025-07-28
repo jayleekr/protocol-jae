@@ -1,5 +1,5 @@
 #!/bin/bash
-# JAE Common Utilities
+# VELOCITY-X Common Utilities
 # 모든 에이전트 스크립트에서 사용하는 공통 함수들
 
 set -euo pipefail
@@ -20,12 +20,12 @@ readonly LOG_WARN=2
 readonly LOG_ERROR=3
 
 # 환경 변수 설정
-export JAE_COMMANDS_DIR="${JAE_COMMANDS_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
-export JAE_CONFIG_DIR="${JAE_CONFIG_DIR:-$JAE_COMMANDS_DIR/config}"
-export JAE_TOOLS_DIR="${JAE_TOOLS_DIR:-$JAE_COMMANDS_DIR/tools}"
-export JAE_OUTPUT_DIR="${JAE_OUTPUT_DIR:-./jae-output}"
-export JAE_TEMP_DIR="${JAE_TEMP_DIR:-/tmp/jae-workflow}"
-export JAE_LOG_LEVEL="${JAE_LOG_LEVEL:-$LOG_INFO}"
+export VELOCITY-X_COMMANDS_DIR="${VELOCITY-X_COMMANDS_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+export VELOCITY-X_CONFIG_DIR="${VELOCITY-X_CONFIG_DIR:-$VELOCITY-X_COMMANDS_DIR/config}"
+export VELOCITY-X_TOOLS_DIR="${VELOCITY-X_TOOLS_DIR:-$VELOCITY-X_COMMANDS_DIR/tools}"
+export VELOCITY-X_OUTPUT_DIR="${VELOCITY-X_OUTPUT_DIR:-./velocity-x-output}"
+export VELOCITY-X_TEMP_DIR="${VELOCITY-X_TEMP_DIR:-/tmp/velocity-x-workflow}"
+export VELOCITY-X_LOG_LEVEL="${VELOCITY-X_LOG_LEVEL:-$LOG_INFO}"
 
 # 로깅 함수
 log() {
@@ -34,7 +34,7 @@ log() {
     local message="$*"
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     
-    if [[ $level -ge $JAE_LOG_LEVEL ]]; then
+    if [[ $level -ge $VELOCITY-X_LOG_LEVEL ]]; then
         case $level in
             $LOG_DEBUG) echo -e "${CYAN}[DEBUG]${NC} $timestamp: $message" ;;
             $LOG_INFO)  echo -e "${GREEN}[INFO]${NC}  $timestamp: $message" ;;
@@ -100,7 +100,7 @@ get_yaml_value() {
 # 에이전트 설정 로드
 load_agent_config() {
     local agent_name="$1"
-    local config_file="$JAE_CONFIG_DIR/agents.yaml"
+    local config_file="$VELOCITY-X_CONFIG_DIR/agents.yaml"
     
     if [[ ! -f "$config_file" ]]; then
         error_exit "Agent config file not found: $config_file"
@@ -121,7 +121,7 @@ load_agent_config() {
 # 도구 설정 로드
 load_tool_config() {
     local tool_name="$1"
-    local config_file="$JAE_CONFIG_DIR/tools.yaml"
+    local config_file="$VELOCITY-X_CONFIG_DIR/tools.yaml"
     
     if [[ ! -f "$config_file" ]]; then
         error_exit "Tool config file not found: $config_file"
@@ -155,7 +155,7 @@ prepare_output_dir() {
     local agent_name="$1"
     local timestamp=$(date '+%Y%m%d_%H%M%S')
     
-    export AGENT_OUTPUT_DIR="$JAE_OUTPUT_DIR/${agent_name}_${timestamp}"
+    export AGENT_OUTPUT_DIR="$VELOCITY-X_OUTPUT_DIR/${agent_name}_${timestamp}"
     ensure_dir "$AGENT_OUTPUT_DIR"
     
     log_info "Output directory: $AGENT_OUTPUT_DIR"
@@ -228,9 +228,9 @@ show_progress() {
 update_agent_status() {
     local status="$1"
     local message="${2:-}"
-    local status_file="$JAE_TEMP_DIR/agent_status_${AGENT_NAME}.json"
+    local status_file="$VELOCITY-X_TEMP_DIR/agent_status_${AGENT_NAME}.json"
     
-    ensure_dir "$JAE_TEMP_DIR"
+    ensure_dir "$VELOCITY-X_TEMP_DIR"
     
     cat > "$status_file" << EOF
 {
@@ -249,7 +249,7 @@ EOF
 # 다른 에이전트의 출력 찾기
 find_agent_output() {
     local agent_name="$1"
-    local output_pattern="$JAE_OUTPUT_DIR/${agent_name}_*"
+    local output_pattern="$VELOCITY-X_OUTPUT_DIR/${agent_name}_*"
     
     # 가장 최근 출력 디렉토리 찾기
     local latest_dir=$(ls -dt $output_pattern 2>/dev/null | head -n1)
@@ -265,7 +265,7 @@ find_agent_output() {
 # 의존성 확인
 check_dependencies() {
     local agent_name="$1"
-    local config_file="$JAE_CONFIG_DIR/agents.yaml"
+    local config_file="$VELOCITY-X_CONFIG_DIR/agents.yaml"
     
     # 의존성 에이전트 목록 가져오기
     local dependencies=$(get_yaml_value "$config_file" ".agents.${agent_name}.dependencies[]" 2>/dev/null || echo "")
@@ -292,7 +292,7 @@ init_agent() {
     export INPUT_FILES=("$@")
     export START_TIME=$(date +%s)
     
-    log_info "Initializing JAE agent: $agent_name"
+    log_info "Initializing VELOCITY-X agent: $agent_name"
     
     # 설정 로드
     load_agent_config "$agent_name"
