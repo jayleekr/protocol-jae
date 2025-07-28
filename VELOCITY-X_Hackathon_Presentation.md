@@ -195,7 +195,7 @@ Key Deliverables:
 Start:
   - Complex, problematic Python code (complexity 18, 3 security issues)
 
-Minute 1: JAE Quality Trio Execution
+Minute 1: VELOCITY-X Quality Trio Execution
   - Polish Specialist: Complexity 18 → 9 improvement
   - Security Guardian: Auto-fix 3 security issues
   - Code Reviewer: Generate automated review comments
@@ -215,17 +215,17 @@ Minute 3: ROI Calculation
 
 ### vs Existing Solutions
 ```yaml
-SonarQube vs JAE:
+SonarQube vs VELOCITY-X:
   - SonarQube: Simple static analysis + manual fixes
-  - JAE: Auto-improvement + feedback loops + multi-agent collaboration
+  - VELOCITY-X: Auto-improvement + feedback loops + multi-agent collaboration
 
-GitHub Copilot vs JAE:
+GitHub Copilot vs VELOCITY-X:
   - Copilot: Code writing assistance
-  - JAE: Full SDLC automation + quality assurance
+  - VELOCITY-X: Full SDLC automation + quality assurance
 
-DeepCode vs JAE:
+DeepCode vs VELOCITY-X:
   - DeepCode: AI-based bug detection
-  - JAE: Detection + auto-fix + workflow integration
+  - VELOCITY-X: Detection + auto-fix + workflow integration
 ```
 
 ### Core Differentiators
@@ -376,7 +376,7 @@ DeepCode vs JAE:
 ## 👥 4명 엔지니어 역할 분담
 
 ### 🏗️ **Engineer 1: 아키텍처 설계자**
-**Claude Code AI Agent: `jae-system-architect`**
+**Claude Code AI Agent: `velocity-system-architect`**
 ```yaml
 담당 영역:
   - 전체 시스템 아키텍처 설계 및 에이전트 간 워크플로우 정의
@@ -390,7 +390,7 @@ DeepCode vs JAE:
 ```
 
 ### 🔧 **Engineer 2: 핵심 에이전트 개발자**
-**Claude Code AI Agents: `jae-polish-specialist` + `jae-code-reviewer`**
+**Claude Code AI Agents: `velocity-polish-specialist` + `velocity-code-reviewer`**
 ```yaml
 담당 영역:
   - Quality Trio 핵심 에이전트 구현 및 최적화
@@ -404,7 +404,7 @@ DeepCode vs JAE:
 ```
 
 ### 🧪 **Engineer 3: 테스트 자동화 전문가**
-**Claude Code AI Agent: `jae-test-engineer`**
+**Claude Code AI Agent: `velocity-test-engineer`**
 ```yaml
 담당 영역:
   - 자동 테스트 생성 시스템 구현
@@ -418,7 +418,7 @@ DeepCode vs JAE:
 ```
 
 ### 📊 **Engineer 4: 성과 측정 및 UI/UX 개발자**
-**Claude Code AI Agents: `jae-project-health-evaluator` + `jae-ui-architect`**
+**Claude Code AI Agents: `velocity-project-health-evaluator` + `velocity-ui-architect`**
 ```yaml
 담당 영역:
   - 실시간 대시보드 및 성과 지표 시각화
@@ -437,7 +437,7 @@ DeepCode vs JAE:
 시작: 
   - 복잡하고 문제가 많은 실제 Python 코드 (복잡도 18, 보안 이슈 3개)
 
-1분차: JAE Quality Trio 실행
+1분차: VELOCITY-X Quality Trio 실행
   - Polish Specialist: 복잡도 18 → 9로 개선
   - Security Guardian: 3개 보안 이슈 자동 수정
   - Code Reviewer: 자동 리뷰 코멘트 생성
@@ -457,17 +457,17 @@ DeepCode vs JAE:
 
 ### vs 기존 솔루션
 ```yaml
-SonarQube vs JAE:
+SonarQube vs VELOCITY-X:
   - SonarQube: 단순 정적 분석 + 수동 수정
-  - JAE: 자동 개선 + 피드백 루프 + 멀티 에이전트 협업
+  - VELOCITY-X: 자동 개선 + 피드백 루프 + 멀티 에이전트 협업
 
-GitHub Copilot vs JAE:
+GitHub Copilot vs VELOCITY-X:
   - Copilot: 코드 작성 보조
-  - JAE: 전체 SDLC 자동화 + 품질 보증
+  - VELOCITY-X: 전체 SDLC 자동화 + 품질 보증
 
-DeepCode vs JAE:
+DeepCode vs VELOCITY-X:
   - DeepCode: AI 기반 버그 탐지
-  - JAE: 탐지 + 자동 수정 + 워크플로우 통합
+  - VELOCITY-X: 탐지 + 자동 수정 + 워크플로우 통합
 ```
 
 ### 핵심 차별화 요소
@@ -488,11 +488,11 @@ DeepCode vs JAE:
 
 ## 📎 Additional Resources
 
-- **GitHub Repository**: [JAE Project](https://github.com/jayleekr/protocol-jae)
+- **GitHub Repository**: [VELOCITY-X Project](https://github.com/jayleekr/protocol-jae)
 - **Live Demo**: [Quality Trio Workflow](./temp_hooks/commands/scripts/run-quality-trio.sh)
-- **Technical Documentation**: [JAE Integrated Workflow](./jae-integrated-workflow.md)
+- **Technical Documentation**: [VELOCITY-X Integrated Workflow](./jae-integrated-workflow.md)
 - **Implementation Guide**: [Claude Agents Setup](./claude-agents/IMPLEMENTATION_GUIDE.md)
 
 ---
 
-*Created for Company Hackathon 2025 | JAE Team* 
+*Created for Company Hackathon 2025 | VELOCITY-X Team* 
