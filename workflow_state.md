@@ -2,9 +2,9 @@
 _Last updated: 2025-07-27_
 
 ## State
-Phase: VALIDATE  
-Status: COMPLETED  
-CurrentItem: GitHub 분석 시스템 통합 및 JAE 마스터링 북 업데이트  
+Phase: CONSTRUCT  
+Status: RUNNING  
+CurrentItem: JAE 2.0 기능 중심 아키텍처 전환 - Phase 1 진행중  
 
 ## Plan
 Phase 1 (완료):
@@ -38,25 +38,37 @@ Phase 3 (완료):
    - 통합 테스트 검증 완료
    - 사용법 문서 (USAGE_GUIDE.md) 작성 완료
 
-Phase 4 (진행중):
+Phase 4 (완료):
 7. ✅ JAE 마스터링 북 서브에이전트 개발 완료
-   - book-content-writer: 기술서 컨텐츠 작성 전문가
-   - book-translator: 다국어 번역 전문가
-   - book-diagram-creator: 기술 다이어그램 생성 전문가
-   - book-formatter: 다중 형식 출판 전문가
-8. ⚠️ JAE 마스터링 북 번역 워크플로우 이슈 식별
-   - 영문 14개 챕터 완성 vs 한국어 4개 챕터만 번역 (28.6%)
-   - 수동 번역 프로세스의 한계로 인한 불완전한 자동화
-   - 워크플로우 설계 결함: 자동 번역 파이프라인 부재
-9. 🔄 개선 계획 수립
-   - 누락된 10개 챕터 한국어 번역 완료
-   - 자동 번역 워크플로우 구축
-   - 번역 완료율 검증 시스템 도입
+8. ✅ JAE 마스터링 북 번역 워크플로우 완성
+9. ✅ GitHub 분석 시스템 통합 완료
+10. ✅ Claude Code 기반 피드백 루프 워크플로우 구현
 
-Phase 5 (향후):
-10. 나머지 7개 에이전트 구현 (vibe, flow, security, test, ui, performance, documentation)
-11. Git hooks 기반 이벤트 트리거 시스템
-12. CI/CD 파이프라인 통합
+JAE 2.0 기능 중심 아키텍처 전환 (진행중):
+Phase 1: 기능 카테고리 재구성 (2주) - 진행중
+11. ✅ Requirements & Analysis 카테고리 (4개 에이전트)
+    - jae-requirements-analyst: 비즈니스 요구사항 분석 전문가 (신규)
+    - jae-vibe-specialist: BDD 시나리오 생성 전문가 (기존)
+    - jae-business-process-analyst: 비즈니스 프로세스 분석 전문가 (신규)
+    - jae-requirements-validator: 요구사항 품질 검증 전문가 (신규)
+
+12. ✅ Design & Architecture 카테고리 (5개 에이전트)
+    - jae-system-architect: 전체 시스템 아키텍처 설계 전문가 (신규)
+    - jae-data-architect: 데이터 모델링 및 DB 아키텍처 전문가 (신규)
+    - jae-ui-architect: UI/UX 설계 전문가 (기존)
+    - jae-security-architect: 보안 아키텍처 전문가 (기존 보강)
+    - jae-design-reviewer: 아키텍처 설계 리뷰 전문가 (신규)
+
+13. 🔄 Implementation & Development 카테고리 (8개 에이전트) - 진행중
+    - 기존 유지: jae-flow-specialist, jae-polish-specialist, jae-code-reviewer, jae-test-engineer, jae-performance-optimizer
+    - jae-api-designer: RESTful API 설계 전문가 (신규 완료)
+    - jae-dependency-manager: 패키지 의존성 관리 전문가 (신규 예정)
+    - jae-cicd-builder: CI/CD 파이프라인 전문가 (신규 예정)
+
+Phase 2-4 (향후 7주):
+14. 카테고리별 실행 시스템 확장 (temp_hooks/commands)
+15. JAE 마스터링 북 업데이트 (새로운 아키텍처 반영)
+16. 전체 시스템 검증 및 최적화
 
 ## Rules
 ### [PHASE: ANALYZE]  
