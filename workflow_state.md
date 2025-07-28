@@ -115,7 +115,7 @@ User request → restore/show blueprint.
 | 4 | 통합 테스트 및 검증 | pending |
 
 ## Log
-- 2025-07-26: 프로젝트 Velocity-X 시작, git 저장소 초기화
+- 2025-07-26: 프로젝트 JAE 시작, git 저장소 초기화
 - 2025-07-26: project_config.md 업데이트 - 목표 및 기술 스택 정의
 - 2025-07-26: ANALYZE 단계로 전환, MVP 구현 계획 수립
 - 2025-07-26: GitHub Actions CI/CD 파이프라인 구성 및 검증 완료
@@ -157,6 +157,12 @@ User request → restore/show blueprint.
   ✅ 에이전트 간 핸드오프 및 품질 메트릭 기반 개선
   📁 claude-agents/: 프롬프트, 워크플로우, 실행 스크립트
   🔄 검증: 복잡도 12→10 개선 시뮬레이션 성공
+- 2025-07-28: 프로젝트명 JAE → VELOCITY-X 전면 변경 완료 ✅
+  ✅ 모든 파일 내용에서 JAE/Jae/jae- → VELOCITY-X/Velocity-X/velocity-x- 변경
+  ✅ 모든 에이전트 파일명 변경 (jae-* → velocity-x-*)
+  ✅ 디렉토리 변경: jae-book → velocity-x-book, jae-output → velocity-x-output
+  ✅ 설정 파일, 문서, 스크립트 모두 업데이트 완료
+  📁 영향 범위: 212개 파일 변경, 2473줄 추가, 1857줄 삭제
 
 ## Workflow History
 <!-- commit SHA & msg -->

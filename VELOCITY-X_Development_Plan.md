@@ -300,7 +300,7 @@ Success Criteria (정량적 지표):
 Title: "System-wide Performance Optimization"
 Priority: P1 (High)
 Sprint: Week 3
-Assignees: Engineer 1, 2, 3
+Assignees: Jay, Aaron, Danni
 Estimate: 12 hours (collaborative)
 
 Description:
