@@ -8,7 +8,7 @@
 
 ---
 
-## 🏗️ **Engineer 1: Architecture Lead**
+## 🏗️ **Jay (Engineer 1): Architecture Lead**
 **Role**: System Architecture & Multi-Agent Orchestration
 **Claude Agent**: `velocity-system-architect`
 
@@ -70,7 +70,7 @@ Success Criteria (정량적 지표):
 
 ---
 
-## 🔧 **Engineer 2: Core Agent Developer**
+## 🔧 **Aaron (Engineer 2): Core Agent Developer**
 **Role**: Quality Trio Implementation & Code Analysis
 **Claude Agents**: `velocity-polish-specialist` + `velocity-code-reviewer`
 
@@ -134,7 +134,7 @@ Success Criteria (정량적 지표):
 
 ---
 
-## 🧪 **Engineer 3: Test Automation Specialist**
+## 🧪 **Danni (Engineer 3): Test Automation Specialist**
 **Role**: Automated Testing & Quality Assurance
 **Claude Agent**: `velocity-test-engineer`
 
@@ -198,7 +198,7 @@ Success Criteria (정량적 지표):
 
 ---
 
-## 📊 **Engineer 4: Metrics & Frontend Developer**
+## 📊 **Ben (Engineer 4): Metrics & Frontend Developer**
 **Role**: Dashboard, Analytics & User Experience
 **Claude Agents**: `velocity-project-health-evaluator` + `velocity-ui-architect`
 
@@ -270,7 +270,7 @@ Success Criteria (정량적 지표):
 Title: "VELOCITY-X Complete System Integration Test"
 Priority: P0 (Critical)
 Sprint: Week 3
-Assignees: All Engineers
+Assignees: Jay, Aaron, Danni, Ben
 Estimate: 8 hours (collaborative)
 
 Description:
