@@ -64,8 +64,8 @@ temp_hooks/commands/
 
 ```bash
 # 저장소 클론
-git clone https://github.com/jayleekr/protocol-jae.git
-cd protocol-jae
+git clone https://github.com/jayleekr/velocity-x.git
+cd velocity-x
 
 # 실행 권한 부여
 chmod +x temp_hooks/commands/agents/*/run.sh
@@ -225,8 +225,8 @@ chmod +x temp_hooks/commands/scripts/*.sh
 
 ## 📞 문의 및 지원
 
-- **이슈 리포트**: [GitHub Issues](https://github.com/jayleekr/protocol-jae/issues)
-- **기능 요청**: [GitHub Discussions](https://github.com/jayleekr/protocol-jae/discussions)
-- **이메일**: jae@example.com
+- **이슈 리포트**: [GitHub Issues](https://github.com/jayleekr/velocity-x/issues)
+- **기능 요청**: [GitHub Discussions](https://github.com/jayleekr/velocity-x/discussions)
+- **이메일**: velocity-x@example.com
 
 **VELOCITY-X와 함께 더 스마트한 개발 경험을 시작하세요! 🚀**

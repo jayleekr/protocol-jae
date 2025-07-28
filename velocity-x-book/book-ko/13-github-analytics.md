@@ -670,7 +670,7 @@ triggers:
 
 ```python
 # 자동화된 분석 설정
-from jae_analytics import AnalyticsScheduler
+from velocity_x_analytics import AnalyticsScheduler
 
 scheduler = AnalyticsScheduler()
 

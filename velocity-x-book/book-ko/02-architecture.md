@@ -515,7 +515,7 @@ docker run --rm \
   --cpus=1.0 \
   --network=none \
   --user=agent \
-  jae/polish-specialist:latest
+  velocity-x/polish-specialist:latest
 ```
 
 ### 입력 검증

@@ -23,7 +23,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger('jae.workflow_engine')
+logger = logging.getLogger('velocity_x.workflow_engine')
 
 class AgentStatus(Enum):
     PENDING = "pending"

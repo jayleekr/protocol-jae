@@ -224,9 +224,9 @@ cd velocity-x-implementation
 
 **공식 VELOCITY-X 자원**
 - [VELOCITY-X 문서](https://velocity-x-docs.example.com)
-- [VELOCITY-X GitHub 저장소](https://github.com/velocity-x-team/jae)
-- [VELOCITY-X 커뮤니티 포럼](https://community.jae.dev)
-- [VELOCITY-X 블로그](https://blog.jae.dev)
+- [VELOCITY-X GitHub 저장소](https://github.com/velocity-x-team/velocity-x)
+- [VELOCITY-X 커뮤니티 포럼](https://community.velocity-x.dev)
+- [VELOCITY-X 블로그](https://blog.velocity-x.dev)
 
 **학습 플랫폼**
 - VELOCITY-X 아카데미 (온라인 코스)
@@ -365,7 +365,7 @@ VELOCITY-X를 개발하기 시작할 때, 우리는 지능적 자동화와 인�
 
 **VELOCITY-X 팀**은 에이전틱 개발 분야 발전에 헌신하는 연구자, 개발자, 실무자들의 협력 그룹입니다. 소프트웨어 엔지니어링, 인공지능, 인간-컴퓨터 상호작용을 배경으로 하는 팀은 현대 개발 도전을 위한 실용적 솔루션을 만들기 위해 다양한 관점을 모았습니다.
 
-팀과 VELOCITY-X 프로젝트에 대한 더 많은 정보는 [https://jae.dev](https://jae.dev)에서 확인하십시오.
+팀과 VELOCITY-X 프로젝트에 대한 더 많은 정보는 [https://velocity-x.dev](https://velocity-x.dev)에서 확인하십시오.
 
 ---
 

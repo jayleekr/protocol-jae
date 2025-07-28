@@ -518,7 +518,7 @@ jobs:
           fetch-depth: 0  # Full history for better context
       
       - name: Setup VELOCITY-X environment
-        uses: ./.github/actions/setup-jae
+        uses: ./.github/actions/setup-velocity-x
       
       - name: Run Code Reviewer
         id: review

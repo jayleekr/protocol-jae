@@ -224,9 +224,9 @@ Your contributions help shape the future:
 
 **Official VELOCITY-X Resources**
 - [VELOCITY-X Documentation](https://velocity-x-docs.example.com)
-- [VELOCITY-X GitHub Repository](https://github.com/velocity-x-team/jae)
-- [VELOCITY-X Community Forum](https://community.jae.dev)
-- [VELOCITY-X Blog](https://blog.jae.dev)
+- [VELOCITY-X GitHub Repository](https://github.com/velocity-x-team/velocity-x)
+- [VELOCITY-X Community Forum](https://community.velocity-x.dev)
+- [VELOCITY-X Blog](https://blog.velocity-x.dev)
 
 **Learning Platforms**
 - VELOCITY-X Academy (online courses)
@@ -365,7 +365,7 @@ Thank you for being part of this journey.
 
 **The VELOCITY-X Team** is a collaborative group of researchers, developers, and practitioners dedicated to advancing the field of agentic development. With backgrounds spanning software engineering, artificial intelligence, and human-computer interaction, the team brings together diverse perspectives to create practical solutions for modern development challenges.
 
-For more information about the team and the VELOCITY-X project, visit [https://jae.dev](https://jae.dev).
+For more information about the team and the VELOCITY-X project, visit [https://velocity-x.dev](https://velocity-x.dev).
 
 ---
 

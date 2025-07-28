@@ -51,7 +51,7 @@ class AgentMetadata:
     capabilities: List[AgentCapability]
     dependencies: List[str]
     tools_required: List[str]
-    min_jae_version: str
+    min_velocity_x_version: str
 
 class VELOCITY-XAgent(ABC):
     """Base class for all VELOCITY-X agents"""
@@ -269,7 +269,7 @@ class APIContractValidatorAgent(VELOCITY-XAgent):
             ],
             dependencies=["openapi-spec-validator", "json-schema"],
             tools_required=["Read", "Grep", "WebFetch"],
-            min_jae_version="1.0.0"
+            min_velocity_x_version="1.0.0"
         )
     
     def validate_input(self, input_data: Any) -> bool:

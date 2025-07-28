@@ -488,7 +488,7 @@ DeepCode vs VELOCITY-X:
 
 ## 📎 Additional Resources
 
-- **GitHub Repository**: [VELOCITY-X Project](https://github.com/jayleekr/protocol-jae)
+- **GitHub Repository**: [VELOCITY-X Project](https://github.com/jayleekr/velocity-x)
 - **Live Demo**: [Quality Trio Workflow](./temp_hooks/commands/scripts/run-quality-trio.sh)
 - **Technical Documentation**: [VELOCITY-X Integrated Workflow](./velocity-x-integrated-workflow.md)
 - **Implementation Guide**: [Claude Agents Setup](./claude-agents/IMPLEMENTATION_GUIDE.md)

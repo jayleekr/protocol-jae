@@ -1308,7 +1308,7 @@ class EcosystemDevelopmentStrategy:
         # Learning pathways
         plan.add_learning_pathway(
             name="VELOCITY-X Fundamentals",
-            target_audience="developers_new_to_jae",
+            target_audience="developers_new_to_velocity_x",
             learning_objectives=[
                 "understand_agentic_concepts",
                 "setup_development_environment",
@@ -1326,7 +1326,7 @@ class EcosystemDevelopmentStrategy:
         
         plan.add_learning_pathway(
             name="Advanced VELOCITY-X Development",
-            target_audience="experienced_jae_developers",
+            target_audience="experienced_velocity_x_developers",
             learning_objectives=[
                 "design_complex_workflows",
                 "implement_custom_agents",
@@ -1377,12 +1377,12 @@ class PartnershipEcosystem:
             partnership_type="integration_and_certification",
             integration_areas=[
                 "native_cloud_deployment",
-                "managed_jae_services",
+                "managed_velocity_x_services",
                 "auto_scaling_integration",
                 "monitoring_and_analytics"
             ],
             mutual_benefits=[
-                "expanded_jae_reach",
+                "expanded_velocity_x_reach",
                 "enhanced_cloud_offerings",
                 "customer_value_creation",
                 "ecosystem_strengthening"
@@ -1395,7 +1395,7 @@ class PartnershipEcosystem:
             partner="Popular IDE Vendors",
             partnership_type="deep_integration",
             integration_areas=[
-                "native_jae_support",
+                "native_velocity_x_support",
                 "debugging_integration",
                 "workflow_visualization",
                 "intelligent_assistance"
@@ -1508,7 +1508,7 @@ class FuturePreparationGuide:
             current_relevance="emerging",
             future_importance="critical",
             learning_resources=[
-                "jae_advanced_course",
+                "velocity_x_advanced_course",
                 "multi_agent_system_books",
                 "research_papers",
                 "hands_on_projects"

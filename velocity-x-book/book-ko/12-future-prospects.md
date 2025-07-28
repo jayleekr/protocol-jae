@@ -1308,7 +1308,7 @@ class EcosystemDevelopmentStrategy:
         # 학습 경로
         plan.add_learning_pathway(
             name="VELOCITY-X 기초",
-            target_audience="jae를_처음_사용하는_개발자",
+            target_audience="velocity_x를_처음_사용하는_개발자",
             learning_objectives=[
                 "understand_agentic_concepts",
                 "setup_development_environment",
@@ -1326,7 +1326,7 @@ class EcosystemDevelopmentStrategy:
         
         plan.add_learning_pathway(
             name="고급 VELOCITY-X 개발",
-            target_audience="경험있는_jae_개발자",
+            target_audience="경험있는_velocity_x_개발자",
             learning_objectives=[
                 "design_complex_workflows",
                 "implement_custom_agents",
@@ -1377,12 +1377,12 @@ class PartnershipEcosystem:
             partnership_type="integration_and_certification",
             integration_areas=[
                 "native_cloud_deployment",
-                "managed_jae_services",
+                "managed_velocity_x_services",
                 "auto_scaling_integration",
                 "monitoring_and_analytics"
             ],
             mutual_benefits=[
-                "expanded_jae_reach",
+                "expanded_velocity_x_reach",
                 "enhanced_cloud_offerings",
                 "customer_value_creation",
                 "ecosystem_strengthening"
@@ -1395,7 +1395,7 @@ class PartnershipEcosystem:
             partner="인기 IDE 공급업체",
             partnership_type="deep_integration",
             integration_areas=[
-                "native_jae_support",
+                "native_velocity_x_support",
                 "debugging_integration",
                 "workflow_visualization",
                 "intelligent_assistance"
@@ -1508,7 +1508,7 @@ class FuturePreparationGuide:
             current_relevance="emerging",
             future_importance="critical",
             learning_resources=[
-                "jae_advanced_course",
+                "velocity_x_advanced_course",
                 "multi_agent_system_books",
                 "research_papers",
                 "hands_on_projects"

@@ -214,4 +214,4 @@ integrations:
     
     prometheus:
       url: "${PROMETHEUS_URL}"
-      metrics_prefix: "jae_analytics"
+      metrics_prefix: "velocity_x_analytics"

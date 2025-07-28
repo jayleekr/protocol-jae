@@ -67,7 +67,7 @@ class TeamWorkflowAssessment:
         
         return analysis
     
-    def recommend_jae_integration_points(self, analysis: WorkflowAnalysisResult) -> IntegrationRecommendations:
+    def recommend_velocity_x_integration_points(self, analysis: WorkflowAnalysisResult) -> IntegrationRecommendations:
         """최적의 VELOCITY-X 통합 지점 추천"""
         
         recommendations = IntegrationRecommendations()
@@ -132,7 +132,7 @@ class TeamVELOCITY-XIntegrator:
         self.agent_deployer = TeamAgentDeployer()
         self.change_tracker = ChangeTracker()
     
-    def implement_jae_integration(self, recommendations: IntegrationRecommendations) -> IntegrationResult:
+    def implement_velocity_x_integration(self, recommendations: IntegrationRecommendations) -> IntegrationResult:
         """추천사항에 기반한 VELOCITY-X 통합 구현"""
         
         result = IntegrationResult(self.team_config.team_id)

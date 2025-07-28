@@ -49,14 +49,14 @@ VELOCITY-X를 시작하는 가장 빠른 방법:
 
 ```bash
 # VELOCITY-X 저장소 클론
-git clone https://github.com/velocity-x-team/jae.git
-cd jae
+git clone https://github.com/velocity-x-team/velocity-x.git
+cd velocity-x
 
 # 자동 설치 스크립트 실행
 ./install.sh
 
 # 설치 확인
-jae --version
+velocity-x --version
 ```
 
 ### 단계별 수동 설치
@@ -67,8 +67,8 @@ jae --version
 
 ```bash
 # VELOCITY-X 저장소 클론
-git clone https://github.com/velocity-x-team/jae.git
-cd jae
+git clone https://github.com/velocity-x-team/velocity-x.git
+cd velocity-x
 
 # Python 가상 환경 생성
 python3 -m venv velocity-x-env
@@ -97,10 +97,10 @@ source ~/.bashrc  # 또는 ~/.zshrc
 
 ```bash
 # 기본 구성 파일 생성
-jae init
+velocity-x init
 
 # 구성 편집 (선택사항)
-jae config edit
+velocity-x config edit
 ```
 
 ### Docker를 이용한 설치
@@ -109,10 +109,10 @@ jae config edit
 
 ```bash
 # Docker 이미지 빌드
-docker build -t jae:latest .
+docker build -t velocity-x:latest .
 
 # 컨테이너 실행
-docker run -it --rm -v $(pwd):/workspace jae:latest
+docker run -it --rm -v $(pwd):/workspace velocity-x:latest
 
 # 또는 Docker Compose 사용
 docker-compose up -d
@@ -125,7 +125,7 @@ docker-compose up -d
 VELOCITY-X는 계층적 구성 시스템을 사용합니다:
 
 ```
-~/.jae/
+~/.velocity-x/
 ├── config.yaml          # 메인 구성 파일
 ├── agents/              # 에이전트별 구성
 │   ├── polish.yaml
@@ -391,7 +391,7 @@ sudo apt install python3.11 python3.11-venv nodejs npm git
 
 # Windows-WSL 통합
 export VELOCITY-X_WINDOWS_INTEGRATION=true
-export VELOCITY-X_WSL_MOUNT="/mnt/c/Users/$USER/Documents/jae"
+export VELOCITY-X_WSL_MOUNT="/mnt/c/Users/$USER/Documents/velocity-x"
 ```
 
 ## 6. IDE 통합
@@ -403,14 +403,14 @@ VS Code에서의 VELOCITY-X 통합:
 ```json
 // .vscode/settings.json
 {
-  "jae.enabled": true,
-  "jae.configPath": "${workspaceFolder}/.jae/config.yaml",
-  "jae.autoRun": {
+  "velocity-x.enabled": true,
+  "velocity-x.configPath": "${workspaceFolder}/.velocity-x/config.yaml",
+  "velocity-x.autoRun": {
     "onSave": true,
     "onCommit": false
   },
-  "jae.displayMode": "inline",
-  "jae.agents": {
+  "velocity-x.displayMode": "inline",
+  "velocity-x.agents": {
     "polish": {
       "enabled": true,
       "runOnSave": true
@@ -430,7 +430,7 @@ VS Code 확장 설치:
 code --install-extension velocity-x-team.velocity-x-vscode
 
 # 설정 동기화
-jae vscode --sync-settings
+velocity-x vscode --sync-settings
 ```
 
 ### JetBrains IDEs
@@ -438,10 +438,10 @@ jae vscode --sync-settings
 IntelliJ/PyCharm에서의 VELOCITY-X 플러그인 설정:
 
 ```xml
-<!-- .idea/jae.xml -->
+<!-- .idea/velocity-x.xml -->
 <component name="VELOCITY-XConfiguration">
   <option name="enabled" value="true" />
-  <option name="configPath" value="$PROJECT_DIR$/.jae/config.yaml" />
+  <option name="configPath" value="$PROJECT_DIR$/.velocity-x/config.yaml" />
   <option name="autoRun">
     <map>
       <entry key="onSave" value="true" />
@@ -459,19 +459,19 @@ IntelliJ/PyCharm에서의 VELOCITY-X 플러그인 설정:
 
 ```bash
 # VELOCITY-X 버전 확인
-jae --version
+velocity-x --version
 
 # 구성 검증
-jae config validate
+velocity-x config validate
 
 # 에이전트 상태 확인
-jae agents status
+velocity-x agents status
 
 # 간단한 테스트 실행
-jae test --quick
+velocity-x test --quick
 
 # 전체 시스템 검사
-jae doctor
+velocity-x doctor
 ```
 
 ### 성능 벤치마크
@@ -480,7 +480,7 @@ jae doctor
 
 ```bash
 # 벤치마크 실행
-jae benchmark --full
+velocity-x benchmark --full
 
 # 결과 예시:
 # Agent Execution Times:
@@ -500,14 +500,14 @@ jae benchmark --full
 
 ```bash
 # 샘플 프로젝트 생성
-jae create sample-project
+velocity-x create sample-project
 cd sample-project
 
 # Quality Trio 워크플로우 실행
-jae run quality-trio
+velocity-x run quality-trio
 
 # 결과 확인
-jae results --latest
+velocity-x results --latest
 ```
 
 ## 8. 문제해결
@@ -518,39 +518,39 @@ jae results --latest
 
 ```bash
 # 파일 권한 수정
-chmod +x $VELOCITY-X_HOME/bin/jae
+chmod +x $VELOCITY-X_HOME/bin/velocity-x
 
 # 디렉토리 권한 확인
-ls -la ~/.jae/
+ls -la ~/.velocity-x/
 
 # 권한 문제 해결
-sudo chown -R $USER:$USER ~/.jae/
+sudo chown -R $USER:$USER ~/.velocity-x/
 ```
 
 #### 의존성 충돌
 
 ```bash
 # 의존성 확인
-jae deps check
+velocity-x deps check
 
 # 충돌 해결
-jae deps resolve
+velocity-x deps resolve
 
 # 클린 재설치
-jae clean && jae install
+velocity-x clean && velocity-x install
 ```
 
 #### 성능 문제
 
 ```bash
 # 성능 진단
-jae diagnose --performance
+velocity-x diagnose --performance
 
 # 캐시 정리
-jae cache clear
+velocity-x cache clear
 
 # 구성 최적화
-jae optimize --auto
+velocity-x optimize --auto
 ```
 
 ### 로그 분석
@@ -559,16 +559,16 @@ jae optimize --auto
 
 ```bash
 # 최근 로그 확인
-jae logs --tail 50
+velocity-x.logs --tail 50
 
 # 특정 에이전트 로그
-jae logs --agent polish-specialist
+velocity-x.logs --agent polish-specialist
 
 # 오류 로그만 확인
-jae logs --level error
+velocity-x.logs --level error
 
 # 로그 내보내기
-jae logs --export logs.txt
+velocity-x.logs --export logs.txt
 ```
 
 ## 9. 업데이트 및 유지보수
@@ -577,28 +577,28 @@ jae logs --export logs.txt
 
 ```bash
 # 자동 업데이트 활성화
-jae config set auto_update.enabled true
-jae config set auto_update.channel stable
+velocity-x config set auto_update.enabled true
+velocity-x config set auto_update.channel stable
 
 # 수동 업데이트 확인
-jae update check
+velocity-x update check
 
 # 업데이트 적용
-jae update apply
+velocity-x update apply
 ```
 
 ### 백업 및 복원
 
 ```bash
 # 구성 백업
-jae backup create ~/.velocity-x-backup
+velocity-x backup create ~/.velocity-x-backup
 
 # 백업에서 복원
-jae backup restore ~/.velocity-x-backup
+velocity-x backup restore ~/.velocity-x-backup
 
 # 자동 백업 설정
-jae config set backup.enabled true
-jae config set backup.interval daily
+velocity-x config set backup.enabled true
+velocity-x config set backup.interval daily
 ```
 
 ## 10. 요약

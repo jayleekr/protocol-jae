@@ -6,7 +6,7 @@
 
 인간 조직에서 팀워크가 중요하듯, AI 에이전트들도 혼자보다는 함께 일할 때 더 강력해집니다. 하지만 에이전트들을 어떻게 조직하고, 어떤 순서로 일하게 하며, 그 성과를 어떻게 측정할지는 전혀 다른 차원의 문제입니다.
 
-VELOCITY-X(Just Another Engineer) 프로젝트를 시작할 때, 저는 단순한 질문 하나에서 출발했습니다:
+VELOCITY-X 프로젝트를 시작할 때, 저는 단순한 질문 하나에서 출발했습니다:
 
 **"개발 워크플로우의 모든 영역을 각각의 전문 에이전트가 담당한다면, 이들을 어떻게 조율해야 할까?"**
 
@@ -768,7 +768,7 @@ AI 에이전트들이 진정으로 협업하는 세상은 이미 시작되었습
 
 ---
 
-*VELOCITY-X 프로젝트는 현재도 진행 중입니다. 최신 소식과 코드는 [GitHub 저장소](https://github.com/jayleekr/protocol-jae)에서 확인하실 수 있습니다.*
+*VELOCITY-X 프로젝트는 현재도 진행 중입니다. 최신 소식과 코드는 [GitHub 저장소](https://github.com/jayleekr/velocity-x)에서 확인하실 수 있습니다.*
 
 **관련 링크:**
 - [VELOCITY-X 프로젝트 문서](./velocity-x-integrated-workflow.md)

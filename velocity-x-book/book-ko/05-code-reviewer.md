@@ -518,7 +518,7 @@ jobs:
           fetch-depth: 0  # 더 나은 컨텍스트를 위한 전체 히스토리
       
       - name: Setup VELOCITY-X environment
-        uses: ./.github/actions/setup-jae
+        uses: ./.github/actions/setup-velocity-x
       
       - name: Run Code Reviewer
         id: review

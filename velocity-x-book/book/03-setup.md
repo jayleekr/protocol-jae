@@ -49,8 +49,8 @@ The fastest way to get started with VELOCITY-X:
 
 ```bash
 # Clone the VELOCITY-X repository
-git clone https://github.com/jayleekr/protocol-jae.git
-cd protocol-jae
+git clone https://github.com/jayleekr/velocity-x.git
+cd velocity-x
 
 # Run the installation script
 ./scripts/install.sh
@@ -66,8 +66,8 @@ For more control over the installation process:
 #### Step 1: Clone and Setup
 ```bash
 # Clone the repository
-git clone https://github.com/jayleekr/protocol-jae.git
-cd protocol-jae
+git clone https://github.com/jayleekr/velocity-x.git
+cd velocity-x
 
 # Create virtual environment (recommended)
 python3 -m venv velocity-x-env
@@ -116,13 +116,13 @@ For containerized environments:
 
 ```bash
 # Build the VELOCITY-X Docker image
-docker build -t jae:latest .
+docker build -t velocity-x:latest .
 
 # Run VELOCITY-X in container
 docker run -it --rm \
   -v $(pwd):/workspace \
   -w /workspace \
-  jae:latest \
+  velocity-x:latest \
   ./temp_hooks/commands/agents/velocity-x-polish-specialist/run.sh --help
 ```
 
@@ -132,8 +132,8 @@ For contributors and advanced users:
 
 ```bash
 # Clone with development dependencies
-git clone --recurse-submodules https://github.com/jayleekr/protocol-jae.git
-cd protocol-jae
+git clone --recurse-submodules https://github.com/jayleekr/velocity-x.git
+cd velocity-x
 
 # Install development dependencies
 pip install -r requirements-dev.txt
@@ -248,13 +248,13 @@ VELOCITY-X_CACHE_TTL=3600
 VELOCITY-X_MEMORY_LIMIT=8Gi
 ```
 
-#### Global Configuration (`~/.jae/config.yaml`)
+#### Global Configuration (`~/.velocity-x/config.yaml`)
 ```yaml
 # Global VELOCITY-X settings
 global:
   default_workspace: "~/workspace"
-  cache_directory: "~/.jae/cache"
-  log_directory: "~/.jae/logs"
+  cache_directory: "~/.velocity-x/cache"
+  log_directory: "~/.velocity-x/logs"
   max_log_files: 10
   
 preferences:
@@ -265,7 +265,7 @@ preferences:
 integrations:
   github:
     enabled: true
-    token_file: "~/.jae/github-token"
+    token_file: "~/.velocity-x/github-token"
   
   slack:
     enabled: false
@@ -279,15 +279,15 @@ Create `.vscode/settings.json`:
 
 ```json
 {
-  "jae.enabled": true,
-  "jae.autoRunOnSave": true,
-  "jae.defaultWorkflow": "quality-trio",
-  "jae.showNotifications": true,
+  "velocity-x.enabled": true,
+  "velocity-x.autoRunOnSave": true,
+  "velocity-x.defaultWorkflow": "quality-trio",
+  "velocity-x.showNotifications": true,
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "black",
   "files.associations": {
-    "*.jae.yaml": "yaml"
+    "*.velocity-x.yaml": "yaml"
   }
 }
 ```
@@ -305,13 +305,13 @@ Add to your `.vimrc`:
 autocmd BufWritePost *.py :call VELOCITY-XAutoRun()
 
 function! VELOCITY-XAutoRun()
-  if exists("g:jae_auto_run") && g:jae_auto_run
+  if exists("g:velocity_x_auto_run") && g:velocity_x_auto_run
     silent execute "!./temp_hooks/commands/agents/velocity-x-polish-specialist/run.sh % &"
   endif
 endfunction
 
 " Enable VELOCITY-X auto-run
-let g:jae_auto_run = 1
+let g:velocity_x_auto_run = 1
 ```
 
 #### JetBrains IDEs
@@ -460,10 +460,10 @@ ulimit -m 8388608  # 8GB memory limit
 
 ```bash
 # View recent logs
-tail -f ~/.jae/logs/jae.log
+tail -f ~/.velocity-x/logs/velocity-x.log
 
 # Search for errors
-grep -i error ~/.jae/logs/jae.log
+grep -i error ~/.velocity-x/logs/velocity-x.log
 
 # Agent-specific logs
 ls -la velocity-x-output/*/logs/
@@ -619,7 +619,7 @@ version: '3.8'
 
 services:
   velocity-x-coordinator:
-    image: jae:latest
+    image: velocity-x:latest
     environment:
       - VELOCITY-X_MODE=coordinator
       - VELOCITY-X_WORKERS=4
@@ -628,7 +628,7 @@ services:
       - velocity-x-cache:/cache
     
   velocity-x-worker:
-    image: jae:latest
+    image: velocity-x:latest
     environment:
       - VELOCITY-X_MODE=worker
       - VELOCITY-X_COORDINATOR_URL=http://velocity-x-coordinator:8080
@@ -651,15 +651,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: jae
+      app: velocity-x
   template:
     metadata:
       labels:
-        app: jae
+        app: velocity-x
     spec:
       containers:
-      - name: jae
-        image: jae:latest
+      - name: velocity-x
+        image: velocity-x:latest
         resources:
           requests:
             memory: "2Gi"

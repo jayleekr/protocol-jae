@@ -389,7 +389,7 @@ graph LR
 
 ### 종합 품질 점수
 ```python
-def calculate_jae_quality_score(artifacts):
+def calculate_velocity_x_quality_score(artifacts):
     """VELOCITY-X 종합 품질 점수 계산"""
     weights = {
         'functionality': 0.25,    # 기능 정확성
@@ -431,7 +431,7 @@ MVP 구성 (해커톤):
 
 ### 통합 설정 예시
 ```yaml
-jae_workflow_config:
+velocity_x_workflow_config:
   name: "Quality Trio MVP"
   version: "1.0.0"
   
