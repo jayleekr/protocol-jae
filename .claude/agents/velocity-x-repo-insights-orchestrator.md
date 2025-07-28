@@ -586,12 +586,12 @@ if __name__ == "__main__":
 
 ### 웹 대시보드 실행
 ```bash
-streamlit run jae_dashboard.py
+streamlit run velocity_x_dashboard.py
 ```
 
 ### API 서버 실행
 ```bash
-uvicorn jae_api:app --host 0.0.0.0 --port 8000
+uvicorn velocity_x_api:app --host 0.0.0.0 --port 8000
 ```
 
 ### 결과 예시
